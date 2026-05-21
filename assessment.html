@@ -1490,13 +1490,16 @@
   // ===== SCREEN TRANSITIONS =====
   function showScreen(id) {
     document.querySelectorAll('.screen').forEach(s => {
-      s.classList.remove('visible');
+      s.classList.remove('visible', 'fading-in');
       s.style.display = 'none';
     });
     const el = document.getElementById(id);
     el.style.display = 'block';
     el.classList.add('fading-in');
-    el.addEventListener('animationend', () => el.classList.remove('fading-in'), { once: true });
+    el.addEventListener('animationend', () => {
+      el.classList.remove('fading-in');
+      el.classList.add('visible');
+    }, { once: true });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
