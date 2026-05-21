@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skin Assessment - NBSkin East Fremantle</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Fahkwang:wght@300;400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Your Skin Assessment - NBSkin with Nuala Briggs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Fahkwang:wght@200;300;400;600&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --deep: #2C2631;
+      --deep-light: #3D3548;
       --accent: #C4A47C;
-      --accent-light: #D4C4A8;
+      --accent-muted: rgba(196,164,124,0.15);
       --rose: #D4B8A8;
       --cream: #FBF8F5;
-      --cream-dark: #F0EAE2;
+      --cream-warm: #F5EDE4;
       --white: #FFFFFF;
       --text: #2A2A2A;
-      --text-light: #666666;
-      --border: rgba(44,38,49,0.1);
+      --text-light: #666;
+      --text-muted: #999;
       --cc-dark: #0A2A28;
       --cc-teal: #00D4BC;
+      --border: rgba(44,38,49,0.1);
+      --error: #B85C55;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -38,208 +40,188 @@
       background: var(--cc-dark);
       color: var(--cc-teal);
       text-align: center;
-      padding: 10px 20px;
-      font-family: 'Fahkwang', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .demo-banner span {
-      color: rgba(255,255,255,0.5);
-      margin: 0 8px;
-    }
-
-    /* ===== NAV ===== */
-    .nav {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-logo {
-      height: 36px;
-      width: auto;
-    }
-
-    .nav-book {
-      background: var(--deep);
-      color: var(--white);
-      text-decoration: none;
-      font-family: 'Fahkwang', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 10px 20px;
-      border-radius: 2px;
-      transition: background 0.2s, opacity 0.2s;
-    }
-
-    .nav-book:hover { background: var(--accent); }
-
-    /* ===== PROGRESS BAR ===== */
-    .progress-wrap {
-      position: sticky;
-      top: 69px;
-      z-index: 99;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .progress-track {
-      height: 4px;
-      background: var(--cream-dark);
-      width: 100%;
-    }
-
-    .progress-fill {
-      height: 4px;
-      background: var(--accent);
-      width: 0%;
-      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .progress-label {
-      text-align: center;
-      font-family: 'Fahkwang', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      color: var(--text-light);
-      text-transform: uppercase;
-      padding: 8px;
-      display: none;
-    }
-
-    .progress-wrap.active .progress-label { display: block; }
-
-    /* ===== HERO ===== */
-    .hero {
-      background: var(--cream);
-      background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(196,164,124,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(212,184,168,0.1) 0%, transparent 50%);
-      padding: 80px 24px 96px;
-      text-align: center;
-    }
-
-    .hero-eyebrow {
-      font-family: 'Sacramento', cursive;
-      font-size: 28px;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .hero h1 {
-      font-family: 'Fahkwang', sans-serif;
-      font-size: clamp(28px, 5vw, 46px);
-      font-weight: 300;
-      color: var(--deep);
-      line-height: 1.2;
-      margin-bottom: 20px;
-      letter-spacing: -0.5px;
-    }
-
-    .hero-sub {
-      font-family: 'Mulish', sans-serif;
-      font-size: 17px;
-      font-weight: 400;
-      color: var(--text-light);
-      max-width: 520px;
-      margin: 0 auto 12px;
-      line-height: 1.65;
-    }
-
-    .hero-time {
-      font-family: 'Fahkwang', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .hero-time::before,
-    .hero-time::after {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--accent-light);
-    }
-
-    .btn-start {
-      display: inline-block;
-      background: var(--deep);
-      color: var(--white);
-      font-family: 'Fahkwang', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 18px 44px;
-      border-radius: 2px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.25s, transform 0.2s;
-    }
-
-    .btn-start:hover {
-      background: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    /* ===== QUIZ SECTION ===== */
-    #quiz-section {
-      display: none;
-      padding: 48px 24px 80px;
-      min-height: 70vh;
-    }
-
-    .quiz-inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    /* ===== QUESTION ===== */
-    .question {
-      display: none;
-      animation: fadeUp 0.4s ease forwards;
-    }
-
-    .question.active {
-      display: block;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .q-step {
+      padding: 9px 20px;
       font-family: 'Fahkwang', sans-serif;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
+    }
+    .demo-banner span { color: rgba(255,255,255,0.35); margin: 0 10px; }
+
+    /* ===== NAV ===== */
+    .nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .nav-logo { height: 34px; width: auto; }
+    .nav-book {
+      background: var(--deep);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-book:hover { background: var(--accent); }
+
+    /* ===== PROGRESS BAR ===== */
+    .progress-wrap {
+      position: sticky;
+      top: 63px;
+      z-index: 199;
+      background: var(--white);
+    }
+    .progress-track {
+      height: 3px;
+      background: rgba(44,38,49,0.08);
+      width: 100%;
+    }
+    .progress-fill {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--rose));
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* ===== SECTION TRANSITIONS ===== */
+    .screen {
+      display: none;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .screen.visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .screen.fading-in {
+      display: block;
+      animation: screenIn 0.45s ease forwards;
+    }
+    @keyframes screenIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== OPENING HERO ===== */
+    #screen-open {
+      padding: 72px 28px 96px;
+      text-align: center;
+      background: var(--cream);
+      background-image:
+        radial-gradient(ellipse at 15% 60%, rgba(212,184,168,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(196,164,124,0.12) 0%, transparent 50%);
+    }
+
+    .open-portrait-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .open-portrait {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(196,164,124,0.4);
+      flex-shrink: 0;
+    }
+    .open-portrait-caption {
+      text-align: left;
+    }
+    .open-portrait-name {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--deep);
+      letter-spacing: 0.5px;
+    }
+    .open-portrait-title {
+      font-family: 'Mulish', sans-serif;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .open-headline {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 200;
+      color: var(--deep);
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+      max-width: 560px;
+      margin: 0 auto 20px;
+    }
+
+    .open-body {
+      font-family: 'Mulish', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-light);
+      max-width: 480px;
+      margin: 0 auto 44px;
+      line-height: 1.75;
+    }
+
+    .btn-begin {
+      display: inline-block;
+      background: var(--deep);
+      color: var(--white);
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 18px 52px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-begin:hover { background: var(--accent); transform: translateY(-2px); }
+
+    /* ===== QUIZ SECTION ===== */
+    #screen-quiz {
+      min-height: 80vh;
+      padding: 0;
+    }
+
+    .question {
+      display: none;
+      padding: 52px 28px 80px;
+      max-width: 700px;
+      margin: 0 auto;
+      animation: screenIn 0.4s ease forwards;
+    }
+    .question.active { display: block; }
+
+    .q-label {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
     .q-title {
       font-family: 'Fahkwang', sans-serif;
       font-size: clamp(20px, 4vw, 28px);
@@ -248,28 +230,143 @@
       line-height: 1.3;
       margin-bottom: 8px;
     }
-
     .q-sub {
       font-family: 'Mulish', sans-serif;
       font-size: 14px;
       color: var(--text-light);
-      margin-bottom: 32px;
+      margin-bottom: 36px;
+      line-height: 1.6;
     }
 
-    /* ===== OPTION BUTTONS (single select) ===== */
+    /* ===== Q1 FORK CARDS ===== */
+    #q1 {
+      max-width: 100%;
+      padding: 0;
+    }
+    .fork-label {
+      text-align: center;
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 48px 28px 28px;
+    }
+    .fork-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 64vh;
+      gap: 0;
+    }
+    @media (max-width: 600px) {
+      .fork-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+    }
+
+    .fork-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 44px 36px;
+      min-height: 340px;
+      transition: filter 0.3s;
+    }
+    @media (max-width: 600px) {
+      .fork-card { min-height: 220px; padding: 32px 24px; }
+    }
+
+    .fork-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s ease;
+    }
+    .fork-card:hover .fork-card-bg { transform: scale(1.03); }
+
+    .fork-card-overlay {
+      position: absolute;
+      inset: 0;
+      transition: background 0.3s;
+    }
+    .fork-card--rosacea .fork-card-overlay {
+      background: linear-gradient(160deg, rgba(44,38,49,0.55) 0%, rgba(44,38,49,0.8) 100%);
+    }
+    .fork-card--ageing .fork-card-overlay {
+      background: linear-gradient(160deg, rgba(44,38,49,0.5) 0%, rgba(44,38,49,0.78) 100%);
+    }
+    .fork-card:hover .fork-card-overlay {
+      background: linear-gradient(160deg, rgba(44,38,49,0.65) 0%, rgba(44,38,49,0.88) 100%);
+    }
+
+    .fork-card-content {
+      position: relative;
+      z-index: 2;
+    }
+    .fork-card-eyebrow {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .fork-card-title {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .fork-card-sub {
+      font-family: 'Mulish', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.65;
+      max-width: 280px;
+    }
+    .fork-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      transition: gap 0.2s;
+    }
+    .fork-card:hover .fork-card-cta { gap: 12px; }
+    .fork-card-cta svg { width: 14px; height: 14px; }
+
+    .fork-card.highlighted {
+      filter: brightness(1.05);
+    }
+
+    /* ===== OPTION BUTTONS ===== */
     .options-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 11px;
     }
-
     .option-btn {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 16px 20px;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 22px;
       background: var(--white);
-      border: 1.5px solid var(--border);
+      border: 1.5px solid rgba(44,38,49,0.1);
       border-radius: 8px;
       cursor: pointer;
       font-family: 'Mulish', sans-serif;
@@ -277,305 +374,214 @@
       font-weight: 400;
       color: var(--text);
       text-align: left;
+      line-height: 1.5;
       transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.15s;
-      box-shadow: 0 2px 8px rgba(44,38,49,0.04);
+      box-shadow: 0 1px 6px rgba(44,38,49,0.04);
+      width: 100%;
     }
-
     .option-btn:hover {
       border-color: var(--accent);
-      box-shadow: 0 4px 16px rgba(196,164,124,0.15);
+      box-shadow: 0 4px 18px rgba(196,164,124,0.14);
       transform: translateY(-1px);
     }
-
     .option-btn.selected {
       border-color: var(--accent);
-      background: rgba(196,164,124,0.08);
-      box-shadow: 0 4px 16px rgba(196,164,124,0.2);
+      background: var(--accent-muted);
+      box-shadow: 0 4px 18px rgba(196,164,124,0.18);
     }
-
     .option-indicator {
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      border: 2px solid var(--border);
+      border: 2px solid rgba(44,38,49,0.18);
       flex-shrink: 0;
+      margin-top: 1px;
       transition: border-color 0.2s, background 0.2s;
       position: relative;
     }
-
     .option-btn.selected .option-indicator {
       border-color: var(--accent);
       background: var(--accent);
     }
-
     .option-btn.selected .option-indicator::after {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      width: 6px;
-      height: 6px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--white);
     }
 
-    /* ===== AGE BUTTONS (inline row) ===== */
-    .age-options {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .age-btn {
-      flex: 1;
-      min-width: 80px;
-      padding: 16px 12px;
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      cursor: pointer;
-      font-family: 'Fahkwang', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text);
-      text-align: center;
-      transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(44,38,49,0.04);
-    }
-
-    .age-btn:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(196,164,124,0.15);
-    }
-
-    .age-btn.selected {
-      border-color: var(--accent);
-      background: rgba(196,164,124,0.08);
-      box-shadow: 0 4px 16px rgba(196,164,124,0.2);
-    }
-
-    /* ===== CONCERN CARDS (visual grid) ===== */
-    .concern-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    @media (max-width: 420px) {
-      .concern-grid { grid-template-columns: 1fr; }
-    }
-
-    .concern-card {
-      padding: 20px 16px;
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      cursor: pointer;
-      text-align: center;
-      transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(44,38,49,0.04);
-    }
-
-    .concern-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(196,164,124,0.15);
-    }
-
-    .concern-card.selected {
-      border-color: var(--accent);
-      background: rgba(196,164,124,0.08);
-      box-shadow: 0 4px 16px rgba(196,164,124,0.2);
-    }
-
-    .concern-card.hidden-card { display: none; }
-
-    .concern-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .concern-label {
-      font-family: 'Mulish', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.3;
-    }
-
-    /* ===== MULTI-SELECT CHECKBOXES ===== */
+    /* ===== CHECKBOX LIST ===== */
     .checkbox-list {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-
     .checkbox-item {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 20px;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 20px;
       background: var(--white);
-      border: 1.5px solid var(--border);
+      border: 1.5px solid rgba(44,38,49,0.1);
       border-radius: 8px;
       cursor: pointer;
       font-family: 'Mulish', sans-serif;
       font-size: 15px;
       color: var(--text);
+      line-height: 1.5;
       transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(44,38,49,0.04);
+      box-shadow: 0 1px 6px rgba(44,38,49,0.04);
     }
-
     .checkbox-item:hover {
       border-color: var(--accent);
-      box-shadow: 0 4px 16px rgba(196,164,124,0.12);
+      box-shadow: 0 4px 14px rgba(196,164,124,0.12);
     }
-
     .checkbox-item.selected {
       border-color: var(--accent);
-      background: rgba(196,164,124,0.08);
+      background: var(--accent-muted);
     }
-
     .checkbox-box {
       width: 20px;
       height: 20px;
       border-radius: 4px;
-      border: 2px solid var(--border);
+      border: 2px solid rgba(44,38,49,0.18);
       flex-shrink: 0;
+      margin-top: 2px;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: border-color 0.2s, background 0.2s;
     }
-
     .checkbox-item.selected .checkbox-box {
       border-color: var(--accent);
       background: var(--accent);
     }
-
     .checkbox-item.selected .checkbox-box::after {
       content: '';
       display: block;
-      width: 10px;
-      height: 6px;
+      width: 10px; height: 6px;
       border-left: 2px solid var(--white);
       border-bottom: 2px solid var(--white);
       transform: rotate(-45deg) translate(1px, -1px);
     }
 
-    /* ===== NEXT BUTTON ===== */
-    .btn-next {
-      margin-top: 24px;
-      display: inline-block;
-      background: var(--deep);
-      color: var(--white);
-      font-family: 'Fahkwang', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 16px 40px;
-      border-radius: 2px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
+    /* ===== VALIDATION MESSAGE (fades in after selection) ===== */
+    .validation-msg {
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.4s ease 0.25s, transform 0.4s ease 0.25s;
+      font-family: 'Mulish', sans-serif;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--accent);
+      margin-top: 20px;
+      padding-left: 2px;
+      line-height: 1.6;
+      pointer-events: none;
+    }
+    .validation-msg.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .btn-next:hover { background: var(--accent); transform: translateY(-1px); }
-    .btn-next:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
-
-    /* ===== BACK BUTTON ===== */
+    /* ===== NAV ROW (back + next) ===== */
+    .q-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
     .btn-back {
-      margin-top: 20px;
       background: none;
       border: none;
       cursor: pointer;
       font-family: 'Mulish', sans-serif;
       font-size: 13px;
-      color: var(--text-light);
+      color: var(--text-muted);
       display: flex;
       align-items: center;
       gap: 6px;
       padding: 6px 0;
       transition: color 0.2s;
+      letter-spacing: 0.3px;
     }
-
     .btn-back:hover { color: var(--accent); }
+    .btn-back svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-    .btn-back svg { width: 14px; height: 14px; }
-
-    .q-nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 20px;
+    .btn-next {
+      background: var(--deep);
+      color: var(--white);
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 15px 38px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
     }
+    .btn-next:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn-next:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
 
     /* ===== LEAD CAPTURE ===== */
-    #lead-section {
-      display: none;
-      padding: 48px 24px 80px;
-      animation: fadeUp 0.5s ease forwards;
+    #screen-lead {
+      padding: 64px 28px 96px;
     }
-
     .lead-inner {
-      max-width: 520px;
+      max-width: 500px;
       margin: 0 auto;
-      text-align: center;
     }
-
     .lead-eyebrow {
       font-family: 'Sacramento', cursive;
-      font-size: 26px;
+      font-size: 30px;
       color: var(--accent);
-      margin-bottom: 12px;
       display: block;
+      margin-bottom: 14px;
     }
-
     .lead-title {
       font-family: 'Fahkwang', sans-serif;
       font-size: clamp(22px, 4vw, 30px);
-      font-weight: 300;
+      font-weight: 200;
       color: var(--deep);
-      margin-bottom: 12px;
+      line-height: 1.25;
+      margin-bottom: 14px;
     }
-
     .lead-sub {
       font-family: 'Mulish', sans-serif;
       font-size: 15px;
       color: var(--text-light);
-      margin-bottom: 36px;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 40px;
     }
 
     .lead-form {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      text-align: left;
+      gap: 16px;
     }
-
     .form-field {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 7px;
     }
-
     .form-field label {
       font-family: 'Fahkwang', sans-serif;
       font-size: 10px;
       font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--text-light);
     }
-
     .form-field input {
-      padding: 14px 16px;
-      border: 1.5px solid var(--border);
+      padding: 15px 18px;
+      border: 1.5px solid rgba(44,38,49,0.12);
       border-radius: 6px;
       background: var(--white);
       font-family: 'Mulish', sans-serif;
@@ -584,375 +590,388 @@
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-
     .form-field input:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px rgba(196,164,124,0.1);
     }
-
-    .form-field input::placeholder { color: var(--text-light); opacity: 0.6; }
-
-    .lead-optional {
+    .form-field input::placeholder { color: var(--text-muted); }
+    .form-optional {
+      font-family: 'Mulish', sans-serif;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .form-error {
       font-family: 'Mulish', sans-serif;
       font-size: 12px;
-      color: var(--text-light);
-      font-style: italic;
+      color: var(--error);
+      display: none;
     }
 
     .btn-results {
-      margin-top: 8px;
       width: 100%;
       background: var(--deep);
       color: var(--white);
       font-family: 'Fahkwang', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      padding: 18px;
+      padding: 19px;
       border-radius: 2px;
       border: none;
       cursor: pointer;
       transition: background 0.25s, transform 0.15s;
+      margin-top: 6px;
     }
-
     .btn-results:hover { background: var(--accent); transform: translateY(-1px); }
 
     .lead-privacy {
       text-align: center;
       font-family: 'Mulish', sans-serif;
       font-size: 12px;
-      color: var(--text-light);
-      margin-top: 16px;
-      line-height: 1.5;
-    }
-
-    .lead-privacy svg {
-      width: 12px;
-      height: 12px;
-      display: inline;
-      vertical-align: middle;
-      margin-right: 4px;
-    }
-
-    .form-error {
-      font-family: 'Mulish', sans-serif;
-      font-size: 12px;
-      color: #C0605A;
-      display: none;
-      margin-top: 4px;
+      color: var(--text-muted);
+      margin-top: 18px;
+      line-height: 1.6;
     }
 
     /* ===== RESULTS ===== */
-    #results-section {
-      display: none;
-      padding: 48px 24px 80px;
-      animation: fadeUp 0.5s ease forwards;
+    #screen-results {
+      padding: 0 0 100px;
     }
 
-    .results-inner {
-      max-width: 680px;
-      margin: 0 auto;
+    .results-hero {
+      background: var(--deep);
+      padding: 64px 28px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-
+    .results-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(196,164,124,0.05);
+    }
+    .results-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(212,184,168,0.05);
+    }
     .results-greeting {
       font-family: 'Sacramento', cursive;
-      font-size: 32px;
+      font-size: 36px;
       color: var(--accent);
-      margin-bottom: 8px;
+      display: block;
+      margin-bottom: 12px;
+      position: relative; z-index: 1;
+    }
+    .results-hero-title {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: clamp(18px, 3.5vw, 26px);
+      font-weight: 200;
+      color: rgba(255,255,255,0.85);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.4;
+      position: relative; z-index: 1;
     }
 
-    .results-title {
-      font-family: 'Fahkwang', sans-serif;
-      font-size: clamp(22px, 4vw, 32px);
-      font-weight: 300;
-      color: var(--deep);
-      margin-bottom: 36px;
-      line-height: 1.25;
+    .results-body {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 28px;
     }
 
     /* Profile card */
     .profile-card {
-      background: var(--deep);
+      margin: -40px 0 0;
+      background: var(--white);
       border-radius: 12px;
-      padding: 32px 28px;
-      margin-bottom: 32px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 40px rgba(44,38,49,0.1);
       position: relative;
-      overflow: hidden;
+      z-index: 10;
+    }
+    .profile-path-tag {
+      display: inline-block;
+      background: var(--accent-muted);
+      color: var(--accent);
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .profile-name {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: clamp(26px, 5vw, 34px);
+      font-weight: 200;
+      color: var(--deep);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .profile-desc {
+      font-family: 'Mulish', sans-serif;
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.8;
     }
 
-    .profile-card::before {
-      content: '';
-      position: absolute;
-      top: -30px;
-      right: -30px;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background: rgba(196,164,124,0.08);
+    /* Score rings */
+    .scores-section {
+      margin-top: 48px;
     }
-
-    .profile-label {
+    .scores-label {
       font-family: 'Fahkwang', sans-serif;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
     }
-
-    .profile-name {
-      font-family: 'Sacramento', cursive;
-      font-size: 38px;
-      color: var(--white);
-      margin-bottom: 14px;
-    }
-
-    .profile-desc {
-      font-family: 'Mulish', sans-serif;
-      font-size: 15px;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.7;
-    }
-
-    /* Score meters */
     .scores-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin-bottom: 36px;
     }
-
     @media (max-width: 480px) {
-      .scores-row { grid-template-columns: 1fr; }
+      .scores-row { grid-template-columns: 1fr; gap: 12px; }
     }
-
     .score-card {
       background: var(--white);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(44,38,49,0.08);
       border-radius: 10px;
-      padding: 20px 16px;
+      padding: 24px 16px;
       text-align: center;
-      box-shadow: 0 2px 12px rgba(44,38,49,0.05);
+      box-shadow: 0 2px 14px rgba(44,38,49,0.05);
     }
-
-    .score-label {
+    .score-card-label {
       font-family: 'Fahkwang', sans-serif;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
     }
-
     .meter-ring {
       position: relative;
       width: 80px;
       height: 80px;
       margin: 0 auto 12px;
     }
-
     .meter-ring svg {
       width: 80px;
       height: 80px;
       transform: rotate(-90deg);
     }
-
     .meter-ring circle {
       fill: none;
-      stroke-width: 7;
+      stroke-width: 6;
       stroke-linecap: round;
     }
-
-    .meter-bg { stroke: var(--cream-dark); }
-
+    .meter-bg { stroke: rgba(44,38,49,0.07); }
     .meter-fg {
       stroke: var(--accent);
       stroke-dasharray: 201;
       stroke-dashoffset: 201;
-      transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+      transition: stroke-dashoffset 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
     }
-
     .meter-text {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
       font-family: 'Fahkwang', sans-serif;
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 17px;
+      font-weight: 400;
       color: var(--deep);
     }
-
-    .score-value-label {
+    .score-sublabel {
       font-family: 'Mulish', sans-serif;
       font-size: 12px;
       color: var(--text-light);
     }
 
-    /* Treatment cards */
-    .treatments-title {
+    /* Recommendation cards */
+    .recs-section {
+      margin-top: 52px;
+    }
+    .recs-intro {
+      margin-bottom: 32px;
+    }
+    .recs-intro-eyebrow {
+      font-family: 'Sacramento', cursive;
+      font-size: 26px;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .recs-intro-title {
       font-family: 'Fahkwang', sans-serif;
+      font-size: clamp(18px, 3.5vw, 24px);
+      font-weight: 300;
+      color: var(--deep);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .recs-intro-sub {
+      font-family: 'Mulish', sans-serif;
       font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
       color: var(--text-light);
-      margin-bottom: 16px;
+      line-height: 1.65;
     }
 
-    .treatment-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-
-    @media (max-width: 500px) {
-      .treatment-cards { grid-template-columns: 1fr; }
-    }
-
-    .treatment-card {
-      background: var(--white);
-      border: 1px solid var(--border);
+    /* Staggered rec cards */
+    .rec-card {
+      margin-bottom: 24px;
       border-radius: 12px;
-      padding: 24px 20px;
-      box-shadow: 0 2px 12px rgba(44,38,49,0.05);
-      display: flex;
-      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(44,38,49,0.08);
     }
-
-    .treatment-tag {
+    .rec-card:nth-child(odd) {
+      margin-left: 0;
+      margin-right: 24px;
+    }
+    .rec-card:nth-child(even) {
+      margin-left: 24px;
+      margin-right: 0;
+    }
+    @media (max-width: 500px) {
+      .rec-card:nth-child(odd),
+      .rec-card:nth-child(even) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    .rec-card-head {
+      background: var(--deep);
+      padding: 28px 28px 24px;
+    }
+    .rec-card-tag {
       display: inline-block;
-      background: rgba(196,164,124,0.12);
+      background: rgba(196,164,124,0.15);
       color: var(--accent);
       font-family: 'Fahkwang', sans-serif;
       font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 20px;
-      margin-bottom: 14px;
-      width: fit-content;
+      margin-bottom: 12px;
     }
-
-    .treatment-name {
+    .rec-card-title {
       font-family: 'Fahkwang', sans-serif;
-      font-size: 17px;
-      font-weight: 500;
-      color: var(--deep);
-      margin-bottom: 8px;
+      font-size: clamp(18px, 3.5vw, 22px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 10px;
       line-height: 1.25;
     }
-
-    .treatment-desc {
+    .rec-card-tagline {
+      font-family: 'Mulish', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+    }
+    .rec-card-body {
+      background: var(--white);
+      padding: 24px 28px 28px;
+    }
+    .rec-card-nuala {
       font-family: 'Mulish', sans-serif;
       font-size: 13px;
-      color: var(--text-light);
-      margin-bottom: 14px;
-      line-height: 1.55;
+      font-style: italic;
+      color: var(--accent);
+      margin-bottom: 20px;
+      padding-left: 14px;
+      border-left: 2px solid var(--rose);
+      line-height: 1.6;
     }
-
-    .treatment-why {
-      background: var(--cream);
-      border-left: 3px solid var(--accent);
-      padding: 10px 14px;
-      border-radius: 0 6px 6px 0;
-      font-family: 'Mulish', sans-serif;
-      font-size: 12px;
-      color: var(--text);
-      line-height: 1.5;
-      margin-bottom: 18px;
-      flex-grow: 1;
-    }
-
-    .btn-book-treatment {
-      display: block;
+    .rec-card-cta {
+      display: inline-block;
       background: var(--deep);
       color: var(--white);
       text-decoration: none;
       font-family: 'Fahkwang', sans-serif;
       font-size: 10px;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      padding: 13px 20px;
+      padding: 14px 28px;
       border-radius: 2px;
-      text-align: center;
-      transition: background 0.2s;
-      margin-top: auto;
+      transition: background 0.2s, transform 0.15s;
     }
+    .rec-card-cta:hover { background: var(--accent); transform: translateY(-1px); }
 
-    .btn-book-treatment:hover { background: var(--accent); }
-
-    /* Final CTA */
-    .final-cta {
-      background: var(--cream-dark);
+    /* Emotional close */
+    .emotional-close {
+      margin-top: 60px;
+      padding: 48px 36px;
+      background: var(--cream-warm);
       border-radius: 12px;
-      padding: 36px 28px;
       text-align: center;
       border: 1px solid rgba(196,164,124,0.2);
     }
-
-    .final-cta-eyebrow {
-      font-family: 'Sacramento', cursive;
-      font-size: 24px;
-      color: var(--accent);
-      margin-bottom: 10px;
+    .emotional-close-portrait {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      margin: 0 auto 20px;
+      display: block;
+      border: 2px solid rgba(196,164,124,0.35);
     }
-
-    .final-cta-title {
-      font-family: 'Fahkwang', sans-serif;
-      font-size: clamp(18px, 3.5vw, 24px);
-      font-weight: 300;
-      color: var(--deep);
-      margin-bottom: 10px;
-    }
-
-    .final-cta-sub {
+    .emotional-close-body {
       font-family: 'Mulish', sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-light);
-      margin-bottom: 24px;
-      line-height: 1.6;
+      line-height: 1.8;
+      max-width: 440px;
+      margin: 0 auto 28px;
     }
-
     .btn-consult {
       display: inline-block;
       background: var(--accent);
       color: var(--white);
       text-decoration: none;
       font-family: 'Fahkwang', sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      padding: 18px 40px;
+      padding: 18px 44px;
       border-radius: 2px;
       transition: background 0.2s, transform 0.15s;
     }
-
     .btn-consult:hover { background: var(--deep); transform: translateY(-1px); }
 
-    /* ===== DIVIDER ===== */
-    .section-divider {
-      width: 48px;
-      height: 2px;
-      background: var(--accent-light);
-      margin: 0 auto 32px;
-      border-radius: 2px;
+    /* ===== BACK SVG ===== */
+    .back-arrow {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 390px) {
-      .hero { padding: 60px 16px 72px; }
-      .hero h1 { font-size: 26px; }
-      .btn-start { padding: 16px 32px; }
-      .profile-name { font-size: 32px; }
-      #quiz-section, #lead-section, #results-section { padding: 32px 16px 60px; }
+      #screen-open { padding: 52px 20px 72px; }
+      .open-headline { font-size: 24px; }
+      .question { padding: 40px 20px 64px; }
+      .profile-card { padding: 28px 20px; }
+      .rec-card-head, .rec-card-body { padding: 22px 20px; }
+      .emotional-close { padding: 36px 20px; }
     }
   </style>
 </head>
@@ -960,7 +979,7 @@
 
   <!-- Demo Banner -->
   <div class="demo-banner">
-    Clinic Catalyst Demo <span>|</span> Interactive Skin Assessment
+    Clinic Catalyst Demo <span>|</span> Skin Assessment - Nuala Briggs
   </div>
 
   <!-- Nav -->
@@ -969,269 +988,393 @@
     <a href="https://www.phorest.com/salon/nbskinptyltd" target="_blank" class="nav-book">Book Now</a>
   </nav>
 
-  <!-- Progress Bar (hidden until quiz starts) -->
+  <!-- Progress Bar -->
   <div class="progress-wrap" id="progress-wrap">
     <div class="progress-track">
       <div class="progress-fill" id="progress-fill"></div>
     </div>
-    <div class="progress-label" id="progress-label">Question 1 of 7</div>
   </div>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <span class="hero-eyebrow">Your skin, understood</span>
-    <h1>Not Sure What Your Skin Needs?</h1>
-    <p class="hero-sub">Answer 7 quick questions and we'll match you to the treatments that will make the biggest difference.</p>
-    <div class="hero-time">Takes about 2 minutes</div>
-    <button class="btn-start" onclick="startQuiz()">Start My Assessment</button>
-  </section>
-
-  <!-- Quiz Section -->
-  <section id="quiz-section">
-    <div class="quiz-inner">
-
-      <!-- Q1: Age Range -->
-      <div class="question" id="q1">
-        <div class="q-step">Question 1 of 7</div>
-        <h2 class="q-title">First, a little about you</h2>
-        <p class="q-sub">Select your age range below</p>
-        <div class="age-options">
-          <button class="age-btn" onclick="selectAge(this, 'Under 30')">Under 30</button>
-          <button class="age-btn" onclick="selectAge(this, '30-39')">30-39</button>
-          <button class="age-btn" onclick="selectAge(this, '40-49')">40-49</button>
-          <button class="age-btn" onclick="selectAge(this, '50-59')">50-59</button>
-          <button class="age-btn" onclick="selectAge(this, '60+')">60+</button>
-        </div>
+  <!-- ===== OPENING SCREEN ===== -->
+  <section class="screen visible" id="screen-open">
+    <div class="open-portrait-wrap">
+      <img src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN-151_05ec8619-6340-4897-a1a8-2c0ae2f7009c.jpg?v=1761625962" alt="Nuala Briggs" class="open-portrait" />
+      <div class="open-portrait-caption">
+        <div class="open-portrait-name">Nuala Briggs</div>
+        <div class="open-portrait-title">Skin specialist - 30 years</div>
       </div>
-
-      <!-- Q2: Primary Concern -->
-      <div class="question" id="q2">
-        <div class="q-step">Question 2 of 7</div>
-        <h2 class="q-title">What troubles you most about your skin right now?</h2>
-        <p class="q-sub">Choose the one that feels most true</p>
-        <div class="concern-grid">
-          <div class="concern-card" data-value="Lines and Wrinkles" onclick="selectConcern(this)">
-            <span class="concern-icon">✨</span>
-            <span class="concern-label">Lines and Wrinkles</span>
-          </div>
-          <div class="concern-card" data-value="Sagging or Loss of Definition" onclick="selectConcern(this)">
-            <span class="concern-icon">🪞</span>
-            <span class="concern-label">Sagging or Loss of Definition</span>
-          </div>
-          <div class="concern-card" data-value="Sun Damage and Pigmentation" onclick="selectConcern(this)">
-            <span class="concern-icon">☀️</span>
-            <span class="concern-label">Sun Damage and Pigmentation</span>
-          </div>
-          <div class="concern-card" data-value="Dull, Tired-Looking Skin" onclick="selectConcern(this)">
-            <span class="concern-icon">💫</span>
-            <span class="concern-label">Dull, Tired-Looking Skin</span>
-          </div>
-          <div class="concern-card" data-value="Rough Texture or Scarring" onclick="selectConcern(this)">
-            <span class="concern-icon">🌿</span>
-            <span class="concern-label">Rough Texture or Scarring</span>
-          </div>
-          <div class="concern-card" data-value="Body Concerns" onclick="selectConcern(this)">
-            <span class="concern-icon">🌸</span>
-            <span class="concern-label">Body Concerns (sculpting or toning)</span>
-          </div>
-        </div>
-        <div class="q-nav">
-          <button class="btn-back" onclick="goBack(1)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
-            Back
-          </button>
-        </div>
-      </div>
-
-      <!-- Q3: Secondary Concerns (multi-select) -->
-      <div class="question" id="q3">
-        <div class="q-step">Question 3 of 7</div>
-        <h2 class="q-title">Anything else you'd like to address?</h2>
-        <p class="q-sub">Select all that apply</p>
-        <div class="checkbox-list" id="secondary-concerns-list">
-          <div class="checkbox-item" data-value="Lines and Wrinkles" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Lines and Wrinkles
-          </div>
-          <div class="checkbox-item" data-value="Sagging or Loss of Definition" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Sagging or Loss of Definition
-          </div>
-          <div class="checkbox-item" data-value="Sun Damage and Pigmentation" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Sun Damage and Pigmentation
-          </div>
-          <div class="checkbox-item" data-value="Dull, Tired-Looking Skin" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Dull, Tired-Looking Skin
-          </div>
-          <div class="checkbox-item" data-value="Rough Texture or Scarring" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Rough Texture or Scarring
-          </div>
-          <div class="checkbox-item" data-value="Body Concerns" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Body Concerns (sculpting or toning)
-          </div>
-          <div class="checkbox-item" data-value="Redness or Rosacea" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Redness or Rosacea
-          </div>
-          <div class="checkbox-item" data-value="Pore Size" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Pore Size
-          </div>
-          <div class="checkbox-item" data-value="Dehydration" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Dehydration
-          </div>
-          <div class="checkbox-item" data-value="Pelvic Floor Support" onclick="toggleCheckbox(this)">
-            <div class="checkbox-box"></div>
-            Pelvic Floor Support
-          </div>
-        </div>
-        <div class="q-nav">
-          <button class="btn-back" onclick="goBack(2)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
-            Back
-          </button>
-          <button class="btn-next" onclick="advanceFromMulti()">Next</button>
-        </div>
-      </div>
-
-      <!-- Q4: How It Makes You Feel -->
-      <div class="question" id="q4">
-        <div class="q-step">Question 4 of 7</div>
-        <h2 class="q-title">How does this affect your day to day?</h2>
-        <p class="q-sub">There is no wrong answer here</p>
-        <div class="options-list">
-          <button class="option-btn" onclick="selectOption(this, 'q4', 'avoid-mirrors')">
-            <div class="option-indicator"></div>
-            I avoid mirrors and photos
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q4', 'notice-but-okay')">
-            <div class="option-indicator"></div>
-            I notice it but it doesn't stop me
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q4', 'ageing-faster')">
-            <div class="option-indicator"></div>
-            I'm starting to feel like I'm ageing faster than I should
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q4', 'feel-myself')">
-            <div class="option-indicator"></div>
-            I just want to feel like myself again
-          </button>
-        </div>
-        <div class="q-nav">
-          <button class="btn-back" onclick="goBack(3)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
-            Back
-          </button>
-        </div>
-      </div>
-
-      <!-- Q5: Skincare Routine -->
-      <div class="question" id="q5">
-        <div class="q-step">Question 5 of 7</div>
-        <h2 class="q-title">How would you describe your current skincare routine?</h2>
-        <p class="q-sub">Be honest - it helps us recommend the right starting point</p>
-        <div class="options-list">
-          <button class="option-btn" onclick="selectOption(this, 'q5', 'basic')">
-            <div class="option-indicator"></div>
-            Basic - cleanser and moisturiser
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q5', 'moderate')">
-            <div class="option-indicator"></div>
-            Moderate - a few targeted products
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q5', 'advanced')">
-            <div class="option-indicator"></div>
-            Advanced - professional-grade products
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q5', 'none')">
-            <div class="option-indicator"></div>
-            Honestly? I don't really have one
-          </button>
-        </div>
-        <div class="q-nav">
-          <button class="btn-back" onclick="goBack(4)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
-            Back
-          </button>
-        </div>
-      </div>
-
-      <!-- Q6: Treatment Experience -->
-      <div class="question" id="q6">
-        <div class="q-step">Question 6 of 7</div>
-        <h2 class="q-title">Have you had professional skin treatments before?</h2>
-        <p class="q-sub">This helps us gauge where to start</p>
-        <div class="options-list">
-          <button class="option-btn" onclick="selectOption(this, 'q6', 'never')">
-            <div class="option-indicator"></div>
-            Never - this would be my first
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q6', 'few-facials')">
-            <div class="option-indicator"></div>
-            A few facials here and there
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q6', 'tried-several')">
-            <div class="option-indicator"></div>
-            Yes - I've tried several treatments
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q6', 'regular')">
-            <div class="option-indicator"></div>
-            Yes - I'm a regular and ready for something new
-          </button>
-        </div>
-        <div class="q-nav">
-          <button class="btn-back" onclick="goBack(5)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
-            Back
-          </button>
-        </div>
-      </div>
-
-      <!-- Q7: Dream Goal -->
-      <div class="question" id="q7">
-        <div class="q-step">Question 7 of 7</div>
-        <h2 class="q-title">If your skin could look and feel any way - what would that be?</h2>
-        <p class="q-sub">Close your eyes for a second. What comes up?</p>
-        <div class="options-list">
-          <button class="option-btn" onclick="selectOption(this, 'q7', 'firm-lifted')">
-            <div class="option-indicator"></div>
-            Firm and lifted - like turning back the clock
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q7', 'smooth-clear')">
-            <div class="option-indicator"></div>
-            Smooth and clear - even tone, no blemishes
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q7', 'glowing-healthy')">
-            <div class="option-indicator"></div>
-            Glowing and healthy - that lit-from-within look
-          </button>
-          <button class="option-btn" onclick="selectOption(this, 'q7', 'confident')">
-            <div class="option-indicator"></div>
-            Confident - I want to love what I see
-          </button>
-        </div>
-        <div class="q-nav">
-          <button class="btn-back" onclick="goBack(6)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
-            Back
-          </button>
-        </div>
-      </div>
-
     </div>
+    <h1 class="open-headline">Let's find what your skin truly needs</h1>
+    <p class="open-body">This isn't a quiz. It's the beginning of a conversation with someone who's spent thirty years listening to skin - and the women behind it.</p>
+    <button class="btn-begin" onclick="startQuiz()">Begin</button>
   </section>
 
-  <!-- Lead Capture -->
-  <section id="lead-section">
+  <!-- ===== QUIZ SECTION ===== -->
+  <section class="screen" id="screen-quiz">
+
+    <!-- Q1: THE FORK -->
+    <div class="question" id="q1">
+      <div class="fork-label">What brought you here today?</div>
+      <div class="fork-grid">
+
+        <div class="fork-card fork-card--rosacea" onclick="selectFork('rosacea', this)" id="fork-rosacea">
+          <div class="fork-card-bg" style="background-image: url('https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=80'); background-position: center top;"></div>
+          <div class="fork-card-overlay"></div>
+          <div class="fork-card-content">
+            <span class="fork-card-eyebrow">Path One</span>
+            <div class="fork-card-title">Rosacea &amp; Redness</div>
+            <div class="fork-card-sub">The flare-ups. The unpredictability. The feeling of never quite being in control of your own skin.</div>
+            <div class="fork-card-cta">
+              This is me
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="fork-card fork-card--ageing" onclick="selectFork('ageing', this)" id="fork-ageing">
+          <div class="fork-card-bg" style="background-image: url('https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&q=80'); background-position: center top;"></div>
+          <div class="fork-card-overlay"></div>
+          <div class="fork-card-content">
+            <span class="fork-card-eyebrow">Path Two</span>
+            <div class="fork-card-title">Ageing Gracefully</div>
+            <div class="fork-card-sub">You look in the mirror and the face looking back doesn't quite match how you feel inside.</div>
+            <div class="fork-card-cta">
+              This is me
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== ROSACEA PATH ===== -->
+
+    <!-- Q2-R -->
+    <div class="question" id="q2r">
+      <div class="q-label">Rosacea &amp; Redness - Question 1 of 5</div>
+      <h2 class="q-title">How long have you been living with this?</h2>
+      <p class="q-sub">There's no right answer. Wherever you are, Nuala has seen it.</p>
+      <div class="options-list">
+        <button class="option-btn" onclick="selectSingle(this, 'q2r', 'new')">
+          <div class="option-indicator"></div>
+          Less than a year - it's new and I'm worried
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q2r', 'few-years')">
+          <div class="option-indicator"></div>
+          A few years - I've tried things but nothing sticks
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q2r', 'most-life')">
+          <div class="option-indicator"></div>
+          Most of my life - I've almost given up finding something that works
+        </button>
+      </div>
+      <div class="validation-msg" id="val-q2r">You're not alone. Nuala has spent 25 years specialising in exactly this.</div>
+      <div class="q-nav">
+        <button class="btn-back" onclick="goToQuestion('q1')">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+      </div>
+    </div>
+
+    <!-- Q3-R -->
+    <div class="question" id="q3r">
+      <div class="q-label">Rosacea &amp; Redness - Question 2 of 5</div>
+      <h2 class="q-title">What triggers your worst days?</h2>
+      <p class="q-sub">Select everything that feels familiar. All of it matters.</p>
+      <div class="checkbox-list" id="triggers-list">
+        <div class="checkbox-item" data-value="stress" onclick="toggleCheck(this)">
+          <div class="checkbox-box"></div>
+          Stress - my skin shows everything I'm feeling
+        </div>
+        <div class="checkbox-item" data-value="weather" onclick="toggleCheck(this)">
+          <div class="checkbox-box"></div>
+          Weather changes - hot, cold, wind, it all sets me off
+        </div>
+        <div class="checkbox-item" data-value="products" onclick="toggleCheck(this)">
+          <div class="checkbox-box"></div>
+          Products - I'm terrified to try anything new
+        </div>
+        <div class="checkbox-item" data-value="food" onclick="toggleCheck(this)">
+          <div class="checkbox-box"></div>
+          Food and drink - I've given up things I love just to keep my skin calm
+        </div>
+        <div class="checkbox-item" data-value="unknown" onclick="toggleCheck(this)">
+          <div class="checkbox-box"></div>
+          I honestly don't know - that's the hardest part
+        </div>
+      </div>
+      <div class="q-nav">
+        <button class="btn-back" onclick="goToQuestion('q2r')">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+        <button class="btn-next" id="btn-q3r-next" onclick="advanceFromCheckbox('q3r', 'q4r')">Continue</button>
+      </div>
+    </div>
+
+    <!-- Q4-R -->
+    <div class="question" id="q4r">
+      <div class="q-label">Rosacea &amp; Redness - Question 3 of 5</div>
+      <h2 class="q-title">How does your rosacea affect your daily life?</h2>
+      <p class="q-sub">Be honest. This is between you and Nuala.</p>
+      <div class="options-list">
+        <button class="option-btn" onclick="selectSingle(this, 'q4r', 'makeup')">
+          <div class="option-indicator"></div>
+          I wear makeup every day just to feel normal
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q4r', 'cancel')">
+          <div class="option-indicator"></div>
+          I cancel plans when I'm having a bad skin day
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q4r', 'photos')">
+          <div class="option-indicator"></div>
+          I avoid being photographed
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q4r', 'accepted')">
+          <div class="option-indicator"></div>
+          I've accepted it - but I wish I didn't have to
+        </button>
+      </div>
+      <div class="q-nav">
+        <button class="btn-back" onclick="goToQuestion('q3r')">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+      </div>
+    </div>
+
+    <!-- Q5-R -->
+    <div class="question" id="q5r">
+      <div class="q-label">Rosacea &amp; Redness - Question 4 of 5</div>
+      <h2 class="q-title">What would change if your skin was calm and clear?</h2>
+      <p class="q-sub">Close your eyes for a moment. What comes up?</p>
+      <div class="options-list">
+        <button class="option-btn" onclick="selectSingle(this, 'q5r', 'show-up')">
+          <div class="option-indicator"></div>
+          I'd stop hiding and start showing up
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q5r', 'no-makeup')">
+          <div class="option-indicator"></div>
+          I'd finally feel confident without makeup
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q5r', 'not-watched')">
+          <div class="option-indicator"></div>
+          I'd stop worrying about what people are looking at when they talk to me
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q5r', 'myself')">
+          <div class="option-indicator"></div>
+          I'd just feel like me again
+        </button>
+      </div>
+      <div class="q-nav">
+        <button class="btn-back" onclick="goToQuestion('q4r')">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== AGEING PATH ===== -->
+
+    <!-- Q2-A -->
+    <div class="question" id="q2a">
+      <div class="q-label">Ageing Gracefully - Question 1 of 5</div>
+      <h2 class="q-title">What bothers you most when you look in the mirror?</h2>
+      <p class="q-sub">Pick the one that speaks loudest to you right now.</p>
+      <div class="options-list">
+        <button class="option-btn" onclick="selectSingle(this, 'q2a', 'lines')">
+          <div class="option-indicator"></div>
+          The lines and wrinkles that seem to have appeared overnight
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q2a', 'definition')">
+          <div class="option-indicator"></div>
+          Loss of definition - my jawline, my neck, things are moving south
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q2a', 'dull')">
+          <div class="option-indicator"></div>
+          My skin looks tired and dull - I've lost my glow
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q2a', 'all')">
+          <div class="option-indicator"></div>
+          All of it - I just don't look like myself anymore
+        </button>
+      </div>
+      <div class="q-nav">
+        <button class="btn-back" onclick="goToQuestion('q1')">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+      </div>
+    </div>
+
+    <!-- Q3-A -->
+    <div class="question" id="q3a">
+      <div class="q-label">Ageing Gracefully - Question 2 of 5</div>
+      <h2 class="q-title">What have you tried so far?</h2>
+      <p class="q-sub">Don't worry if the answer is "not much". That's actually perfect timing.</p>
+      <div class="options-list">
+        <button class="option-btn" onclick="selectSingle(this, 'q3a', 'products')">
+          <div class="option-indicator"></div>
+          Every cream, serum and product on the shelf
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q3a', 'facials')">
+          <div class="option-indicator"></div>
+          Facials here and there but nothing transformative
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q3a', 'injectables')">
+          <div class="option-indicator"></div>
+          I've considered injectables but something holds me back
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q3a', 'nothing')">
+          <div class="option-indicator"></div>
+          Honestly? Nothing yet - I don't know where to start
+        </button>
+      </div>
+      <div class="validation-msg" id="val-q3a">Most women who sit in Nuala's chair say exactly the same thing.</div>
+      <div class="q-nav">
+        <button class="btn-back" onclick="goToQuestion('q2a')">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+      </div>
+    </div>
+
+    <!-- Q4-A -->
+    <div class="question" id="q4a">
+      <div class="q-label">Ageing Gracefully - Question 3 of 5</div>
+      <h2 class="q-title">What matters most to you about how you age?</h2>
+      <p class="q-sub">This tells Nuala everything she needs to know about how to approach your care.</p>
+      <div class="options-list">
+        <button class="option-btn" onclick="selectSingle(this, 'q4a', 'natural')">
+          <div class="option-indicator"></div>
+          I want to look natural - not frozen, not fake, just refreshed
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q4a', 'inside-out')">
+          <div class="option-indicator"></div>
+          I want to feel as good on the outside as I do on the inside
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q4a', 'no-needles')">
+          <div class="option-indicator"></div>
+          I don't want surgery or needles - there has to be another way
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q4a', 'invest')">
+          <div class="option-indicator"></div>
+          I want to invest in my skin properly, not just keep patching
+        </button>
+      </div>
+      <div class="q-nav">
+        <button class="btn-back" onclick="goToQuestion('q3a')">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+      </div>
+    </div>
+
+    <!-- Q5-A -->
+    <div class="question" id="q5a">
+      <div class="q-label">Ageing Gracefully - Question 4 of 5</div>
+      <h2 class="q-title">If Nuala could give you one result, what would it be?</h2>
+      <p class="q-sub">Dream a little. You're allowed.</p>
+      <div class="options-list">
+        <button class="option-btn" onclick="selectSingle(this, 'q5a', 'lifted')">
+          <div class="option-indicator"></div>
+          Firm, lifted skin that makes me feel like I've turned back the clock
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q5a', 'glow')">
+          <div class="option-indicator"></div>
+          That lit-from-within glow I used to have
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q5a', 'confidence')">
+          <div class="option-indicator"></div>
+          Confidence to go out without makeup and love what I see
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q5a', 'plan')">
+          <div class="option-indicator"></div>
+          Someone who actually understands my skin and has a real plan
+        </button>
+      </div>
+      <div class="q-nav">
+        <button class="btn-back" onclick="goToQuestion('q4a')">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== SHARED QUESTIONS (Q6 + Q7) ===== -->
+
+    <!-- Q6: Skincare routine -->
+    <div class="question" id="q6">
+      <div class="q-label" id="q6-label">Almost there - Question 5 of 5</div>
+      <h2 class="q-title">How would you describe your current skincare routine?</h2>
+      <p class="q-sub">Be honest - it helps Nuala know exactly where to start with you.</p>
+      <div class="options-list">
+        <button class="option-btn" onclick="selectSingle(this, 'q6', 'basic')">
+          <div class="option-indicator"></div>
+          Basic - cleanser and moisturiser, that's about it
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q6', 'invested')">
+          <div class="option-indicator"></div>
+          I've invested in good products but I'm not sure I'm using the right ones
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q6', 'routine')">
+          <div class="option-indicator"></div>
+          I follow a routine religiously but my skin isn't responding
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q6', 'none')">
+          <div class="option-indicator"></div>
+          I don't really have one - I don't know where to begin
+        </button>
+      </div>
+      <div class="q-nav">
+        <button class="btn-back" id="q6-back" onclick="">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+      </div>
+    </div>
+
+    <!-- Q7: What's holding you back -->
+    <div class="question" id="q7">
+      <div class="q-label" id="q7-label">One last thing</div>
+      <h2 class="q-title">What's holding you back from taking this step?</h2>
+      <p class="q-sub">Nuala wants to know this so she can meet you exactly where you are.</p>
+      <div class="options-list">
+        <button class="option-btn" onclick="selectSingle(this, 'q7', 'burnt')">
+          <div class="option-indicator"></div>
+          I've been burnt before - spent money and seen no results
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q7', 'trust')">
+          <div class="option-indicator"></div>
+          I don't know who to trust
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q7', 'nervous')">
+          <div class="option-indicator"></div>
+          I'm nervous about the commitment
+        </button>
+        <button class="option-btn" onclick="selectSingle(this, 'q7', 'ready')">
+          <div class="option-indicator"></div>
+          Nothing - I'm ready. I just need the right person.
+        </button>
+      </div>
+      <div class="q-nav">
+        <button class="btn-back" onclick="goToQuestion('q6')">
+          <svg class="back-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          Back
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== LEAD CAPTURE ===== -->
+  <section class="screen" id="screen-lead">
     <div class="lead-inner">
       <span class="lead-eyebrow">Almost there</span>
-      <h2 class="lead-title">Your personalised results are ready</h2>
-      <p class="lead-sub">Tell us where to send your treatment recommendations, and Nuala's team can follow up if you'd like to chat.</p>
+      <h2 class="lead-title">Your personalised skin profile is ready</h2>
+      <p class="lead-sub">Nuala will review your answers before your consultation so she's already prepared for you. Nothing generic. No starting from scratch.</p>
       <form class="lead-form" onsubmit="submitLead(event)">
         <div class="form-field">
           <label for="lead-name">Your Name</label>
@@ -1244,456 +1387,487 @@
           <span class="form-error" id="email-error">Please enter a valid email address</span>
         </div>
         <div class="form-field">
-          <label for="lead-phone">Phone <span class="lead-optional">(optional)</span></label>
-          <input type="tel" id="lead-phone" placeholder="e.g. 0400 000 000" autocomplete="tel" />
+          <label for="lead-phone">Phone <span class="form-optional">(optional)</span></label>
+          <input type="tel" id="lead-phone" placeholder="0400 000 000" autocomplete="tel" />
         </div>
         <button type="submit" class="btn-results">See My Results</button>
       </form>
-      <p class="lead-privacy">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-        Your details are kept private and are only used to personalise your treatment recommendations.
-      </p>
+      <p class="lead-privacy">Your details are kept private. We only use them to prepare for your consultation.</p>
     </div>
   </section>
 
-  <!-- Results -->
-  <section id="results-section">
-    <div class="results-inner">
-      <div class="results-greeting" id="results-greeting">Hi there,</div>
-      <h2 class="results-title" id="results-title">Here's what we recommend for your skin</h2>
+  <!-- ===== RESULTS ===== -->
+  <section class="screen" id="screen-results">
 
-      <div class="section-divider"></div>
+    <div class="results-hero">
+      <span class="results-greeting" id="results-greeting">Hi there,</span>
+      <div class="results-hero-title" id="results-hero-title">Here is what Nuala sees in your answers</div>
+    </div>
 
-      <!-- Profile Card -->
+    <div class="results-body">
+
+      <!-- Profile card -->
       <div class="profile-card">
-        <div class="profile-label">Your Skin Profile</div>
-        <div class="profile-name" id="profile-name">The Glow Chaser</div>
-        <p class="profile-desc" id="profile-desc">Loading your personalised profile...</p>
+        <div class="profile-path-tag" id="profile-path-tag">Rosacea Path</div>
+        <div class="profile-name" id="profile-name">The Rosacea Warrior</div>
+        <p class="profile-desc" id="profile-desc">Your profile is loading...</p>
       </div>
 
-      <!-- Score Meters -->
-      <div class="scores-row" id="scores-row">
-        <div class="score-card">
-          <div class="score-label">Skin Vitality</div>
-          <div class="meter-ring">
-            <svg viewBox="0 0 80 80">
-              <circle class="meter-bg" cx="40" cy="40" r="32" />
-              <circle class="meter-fg" id="meter-vitality" cx="40" cy="40" r="32" />
-            </svg>
-            <div class="meter-text" id="meter-vitality-text">0%</div>
+      <!-- Score meters -->
+      <div class="scores-section">
+        <div class="scores-label">Your Skin Portrait</div>
+        <div class="scores-row">
+          <div class="score-card">
+            <div class="score-card-label">Sensitivity Level</div>
+            <div class="meter-ring">
+              <svg viewBox="0 0 80 80">
+                <circle class="meter-bg" cx="40" cy="40" r="32" />
+                <circle class="meter-fg" id="meter-a" cx="40" cy="40" r="32" />
+              </svg>
+              <div class="meter-text" id="meter-a-text">-</div>
+            </div>
+            <div class="score-sublabel" id="meter-a-label">-</div>
           </div>
-          <div class="score-value-label" id="vitality-label">Good</div>
-        </div>
-        <div class="score-card">
-          <div class="score-label">Treatment Readiness</div>
-          <div class="meter-ring">
-            <svg viewBox="0 0 80 80">
-              <circle class="meter-bg" cx="40" cy="40" r="32" />
-              <circle class="meter-fg" id="meter-readiness" cx="40" cy="40" r="32" />
-            </svg>
-            <div class="meter-text" id="meter-readiness-text">0%</div>
+          <div class="score-card">
+            <div class="score-card-label">Nuala's Readiness</div>
+            <div class="meter-ring">
+              <svg viewBox="0 0 80 80">
+                <circle class="meter-bg" cx="40" cy="40" r="32" />
+                <circle class="meter-fg" id="meter-b" cx="40" cy="40" r="32" />
+              </svg>
+              <div class="meter-text" id="meter-b-text">-</div>
+            </div>
+            <div class="score-sublabel" id="meter-b-label">-</div>
           </div>
-          <div class="score-value-label" id="readiness-label">Ready</div>
-        </div>
-        <div class="score-card">
-          <div class="score-label">Expected Impact</div>
-          <div class="meter-ring">
-            <svg viewBox="0 0 80 80">
-              <circle class="meter-bg" cx="40" cy="40" r="32" />
-              <circle class="meter-fg" id="meter-impact" cx="40" cy="40" r="32" />
-            </svg>
-            <div class="meter-text" id="meter-impact-text">0%</div>
+          <div class="score-card">
+            <div class="score-card-label">Transformation Potential</div>
+            <div class="meter-ring">
+              <svg viewBox="0 0 80 80">
+                <circle class="meter-bg" cx="40" cy="40" r="32" />
+                <circle class="meter-fg" id="meter-c" cx="40" cy="40" r="32" />
+              </svg>
+              <div class="meter-text" id="meter-c-text">-</div>
+            </div>
+            <div class="score-sublabel" id="meter-c-label">-</div>
           </div>
-          <div class="score-value-label" id="impact-label">High</div>
         </div>
       </div>
 
-      <!-- Recommended Treatments -->
-      <div class="treatments-title">Recommended for You</div>
-      <div class="treatment-cards" id="treatment-cards">
-        <!-- Populated by JS -->
+      <!-- Recommendations -->
+      <div class="recs-section">
+        <div class="recs-intro">
+          <span class="recs-intro-eyebrow">Nuala's recommendation</span>
+          <h3 class="recs-intro-title" id="recs-title">A plan built around what you actually need</h3>
+          <p class="recs-intro-sub" id="recs-sub">Based on everything you've shared, here's what Nuala would focus on first.</p>
+        </div>
+        <div id="rec-cards-wrap">
+          <!-- Populated by JS -->
+        </div>
       </div>
 
-      <!-- Final CTA -->
-      <div class="final-cta">
-        <div class="final-cta-eyebrow">Ready to take the next step?</div>
-        <h3 class="final-cta-title">Book a Free Consultation with Nuala</h3>
-        <p class="final-cta-sub">30+ years of experience. Zero pressure. Just honest advice about what will actually work for your skin.</p>
-        <a href="https://www.phorest.com/salon/nbskinptyltd" target="_blank" class="btn-consult">Book My Free Consultation</a>
+      <!-- Emotional close -->
+      <div class="emotional-close">
+        <img src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN-151_05ec8619-6340-4897-a1a8-2c0ae2f7009c.jpg?v=1761625962" alt="Nuala Briggs" class="emotional-close-portrait" />
+        <p class="emotional-close-body">You've taken the first step. Nuala has helped thousands of women with exactly what you're experiencing. Thirty years of expertise, zero pressure - just honest guidance from someone who genuinely understands.</p>
+        <a href="https://www.phorest.com/salon/nbskinptyltd" target="_blank" class="btn-consult">Book Your Consultation with Nuala</a>
       </div>
+
     </div>
   </section>
 
   <script>
-    // ===== STATE =====
-    const answers = {
-      age: null,
-      primary: null,
-      secondary: [],
-      feeling: null,
-      routine: null,
-      experience: null,
-      goal: null
-    };
+  // ===== STATE =====
+  const state = {
+    path: null, // 'rosacea' | 'ageing'
+    answers: {},
+    triggers: []
+  };
 
-    let currentQ = 0;
-    const TOTAL_QUESTIONS = 7;
+  // Track which questions have been answered (for progress)
+  let answeredCount = 0;
+  const TOTAL_Q = 7; // Q1 + 5 path questions + Q6 + Q7 (shared)
 
-    // ===== TREATMENT DATA =====
-    const treatmentMap = {
-      'Lines and Wrinkles': [
-        {
-          name: 'HIFU Face Tightening',
-          tag: 'Gold Standard',
-          desc: 'Ultrasound energy delivered deep below the surface to firm, lift and reduce the appearance of fine lines.',
-          why: 'For lines and early wrinkles, HIFU works where serums can\'t reach - stimulating collagen at the structural level for results that build over 3-6 months.'
-        },
-        {
-          name: 'Sofwave',
-          tag: 'Collagen Booster',
-          desc: 'A gentle, non-invasive treatment that rebuilds collagen and targets fine lines with no downtime.',
-          why: 'Sofwave is ideal for fine lines and mild laxity - comfortable, effective, and perfect as a first step into advanced skin technology.'
-        }
-      ],
-      'Sagging or Loss of Definition': [
-        {
-          name: 'HIFU Face Tightening',
-          tag: 'Lifting Specialist',
-          desc: 'Clinical-grade ultrasound that lifts and tightens from the deepest layers of the skin - including the SMAS layer.',
-          why: 'When definition is your goal, HIFU is the benchmark treatment. It targets the structural layer of the face that surgery would otherwise address.'
-        },
-        {
-          name: 'NeoGen Plasma',
-          tag: '6 International Awards',
-          desc: 'Plasma energy technology that renews the skin from the inside out - tightening, refining and rebuilding.',
-          why: 'NeoGen works in perfect partnership with HIFU - while HIFU lifts the structure, NeoGen renews the surface quality and restores a youthful density.'
-        }
-      ],
-      'Sun Damage and Pigmentation': [
-        {
-          name: 'NeoGen Plasma',
-          tag: '6 International Awards',
-          desc: 'Award-winning plasma technology that works across all skin concerns including pigmentation, tone and texture.',
-          why: 'NeoGen is one of the most effective treatments available for sun damage - addressing both the surface discolouration and the texture changes beneath.'
-        },
-        {
-          name: 'Cosmelan',
-          tag: 'Pigmentation Specialist',
-          desc: 'A clinically-proven depigmentation system that targets melasma, sun spots and stubborn uneven tone.',
-          why: 'If pigmentation is your primary concern, Cosmelan is a targeted solution that interrupts the pigment pathway and delivers visible, lasting correction.'
-        }
-      ],
-      'Dull, Tired-Looking Skin': [
-        {
-          name: 'MicroHydra-LIFT Facial',
-          tag: 'NBSkin Signature',
-          desc: 'The NBSkin signature treatment - a deeply hydrating, lifting and brightening facial that transforms tired skin.',
-          why: 'For dull, dehydrated skin that\'s lost its glow, the MicroHydra-LIFT is the perfect reset. It\'s the treatment clients come back to again and again.'
-        },
-        {
-          name: 'LED Light Therapy',
-          tag: 'Glow Enhancer',
-          desc: 'Medical-grade LED that reduces inflammation, supports collagen production and leaves skin visibly calmer and brighter.',
-          why: 'LED is the ultimate finishing touch - it boosts the results of every other treatment and delivers that lit-from-within glow you\'re after.'
-        }
-      ],
-      'Rough Texture or Scarring': [
-        {
-          name: 'NeoGen Plasma',
-          tag: '6 International Awards',
-          desc: 'A revolutionary plasma technology that resurfaces and renews - proven across texture, scarring and large pores.',
-          why: 'NeoGen is exceptional for texture concerns - it triggers a controlled renewal response that smooths, refines and visibly improves even deep scarring over a course of treatments.'
-        },
-        {
-          name: 'Microneedling + Growth Factors',
-          tag: 'Skin Renewal',
-          desc: 'Precision micro-channels combined with potent growth factors to rebuild skin texture from the inside out.',
-          why: 'Microneedling with Growth Factors is ideal for scarring and enlarged pores - it stimulates the skin\'s own repair response and pairs beautifully with NeoGen.'
-        }
-      ],
-      'Body Concerns': [
-        {
-          name: 'TESLA Former',
-          tag: 'Body Sculpting',
-          desc: 'Electromagnetic muscle stimulation that tones, tightens and sculpts - equivalent to thousands of targeted muscle contractions.',
-          why: 'TESLA Former is the body treatment that goes beyond the surface - it works at the muscle level to deliver genuine toning and definition where exercise alone falls short.'
-        },
-        {
-          name: 'TESLA Chair',
-          tag: 'Pelvic Floor',
-          desc: 'A discreet, fully clothed treatment that strengthens the pelvic floor - supporting incontinence and core stability.',
-          why: 'For pelvic floor concerns, the TESLA Chair is a quiet game-changer - non-invasive, private, and delivering real functional improvement in as little as 4 sessions.'
-        }
-      ]
-    };
+  // ===== SCREEN TRANSITIONS =====
+  function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => {
+      s.classList.remove('visible');
+      s.style.display = 'none';
+    });
+    const el = document.getElementById(id);
+    el.style.display = 'block';
+    el.classList.add('fading-in');
+    el.addEventListener('animationend', () => el.classList.remove('fading-in'), { once: true });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-    // ===== SKIN PROFILES =====
-    const profiles = {
-      'Lines and Wrinkles': {
-        name: 'The Clock Turner',
-        desc: 'You notice the changes in your skin and you\'re ready to do something about it - not out of vanity, but because you want to look as vital as you feel. The right treatment plan can genuinely turn back the clock for you, and we love working with clients who arrive with this clarity.'
-      },
-      'Sagging or Loss of Definition': {
-        name: 'The Definition Restorer',
-        desc: 'You remember how your jawline looked, and you want it back. That\'s a completely valid and very achievable goal. The treatments we\'ve selected for you work at the structural level - the same layer that makes the biggest visual difference.'
-      },
-      'Sun Damage and Pigmentation': {
-        name: 'The Tone Chaser',
-        desc: 'You\'ve lived in the sun - probably enjoyed it - and now you\'re ready to address the visible evidence. Pigmentation and sun damage respond beautifully to the right clinical approach, and you\'re in good hands.'
-      },
-      'Dull, Tired-Looking Skin': {
-        name: 'The Glow Seeker',
-        desc: 'You want your skin to feel as good as the rest of you. That rested, glowing, healthy complexion isn\'t out of reach - it just needs the right combination of deep hydration and targeted support. Your results will feel like a full reset.'
-      },
-      'Rough Texture or Scarring': {
-        name: 'The Renewal Seeker',
-        desc: 'Texture and scarring can feel like the most stubborn of all skin concerns - but they respond incredibly well to the right clinical treatments. The options we\'ve selected are chosen specifically to trigger genuine renewal, not just surface coverage.'
-      },
-      'Body Concerns': {
-        name: 'The Transformation Ready',
-        desc: 'You\'re thinking beyond the face - and rightly so. Your body deserves the same quality of care. Whether it\'s toning, sculpting or pelvic floor health, the treatments we\'ve chosen are designed to create real, functional change you can feel.'
-      }
-    };
+  // ===== START =====
+  function startQuiz() {
+    document.getElementById('progress-wrap').style.visibility = 'visible';
+    showScreen('screen-quiz');
+    goToQuestion('q1');
+    updateProgress(0);
+  }
 
-    // ===== SCORE LOGIC =====
-    function calculateScores() {
-      let vitality = 60;
-      let readiness = 50;
-      let impact = 65;
-
-      // Age factor
-      const ageScores = { 'Under 30': { v: 20, r: 0, i: -5 }, '30-39': { v: 10, r: 5, i: 5 }, '40-49': { v: 0, r: 10, i: 15 }, '50-59': { v: -5, r: 15, i: 20 }, '60+': { v: -10, r: 15, i: 20 } };
-      if (answers.age && ageScores[answers.age]) {
-        vitality += ageScores[answers.age].v;
-        readiness += ageScores[answers.age].r;
-        impact += ageScores[answers.age].i;
-      }
-
-      // Routine factor
-      const routineMap = { 'advanced': { v: 15, r: 15 }, 'moderate': { v: 5, r: 10 }, 'basic': { v: 0, r: 5 }, 'none': { v: -10, r: 0 } };
-      if (answers.routine && routineMap[answers.routine]) {
-        vitality += routineMap[answers.routine].v;
-        readiness += routineMap[answers.routine].r;
-      }
-
-      // Experience factor
-      const expMap = { 'regular': { r: 25, i: 5 }, 'tried-several': { r: 18, i: 5 }, 'few-facials': { r: 10, i: 10 }, 'never': { r: 5, i: 15 } };
-      if (answers.experience && expMap[answers.experience]) {
-        readiness += expMap[answers.experience].r;
-        impact += expMap[answers.experience].i;
-      }
-
-      return {
-        vitality: Math.min(95, Math.max(35, vitality)),
-        readiness: Math.min(95, Math.max(35, readiness)),
-        impact: Math.min(95, Math.max(55, impact))
-      };
+  // ===== QUESTION NAVIGATION =====
+  function goToQuestion(qId) {
+    document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+    const el = document.getElementById(qId);
+    if (el) {
+      el.classList.add('active');
+      el.style.animation = 'none';
+      el.offsetHeight;
+      el.style.animation = '';
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-    function scoreLabel(val) {
-      if (val >= 85) return 'Excellent';
-      if (val >= 70) return 'Great';
-      if (val >= 55) return 'Good';
-      return 'Building';
-    }
-
-    // ===== PROGRESS =====
-    function updateProgress(q) {
-      const pct = ((q - 1) / TOTAL_QUESTIONS) * 100;
-      document.getElementById('progress-fill').style.width = pct + '%';
-      document.getElementById('progress-label').textContent = 'Question ' + q + ' of ' + TOTAL_QUESTIONS;
-    }
-
-    // ===== NAV =====
-    function startQuiz() {
-      document.getElementById('hero').style.display = 'none';
-      document.getElementById('quiz-section').style.display = 'block';
-      document.getElementById('progress-wrap').classList.add('active');
-      showQuestion(1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function showQuestion(n) {
-      document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
-      const el = document.getElementById('q' + n);
-      if (el) {
-        el.classList.add('active');
-        // Re-trigger animation
-        el.style.animation = 'none';
-        el.offsetHeight;
-        el.style.animation = '';
-      }
-      currentQ = n;
-      updateProgress(n);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function goBack(to) {
-      showQuestion(to);
-    }
-
-    function advanceQuestion(from) {
-      if (from < TOTAL_QUESTIONS) {
-        setTimeout(() => showQuestion(from + 1), 280);
+  // ===== Q1: FORK =====
+  function selectFork(path, card) {
+    state.path = path;
+    card.classList.add('highlighted');
+    setTimeout(() => {
+      if (path === 'rosacea') {
+        setQ6Back('q5r');
+        goToQuestion('q2r');
       } else {
-        // All questions done - show lead capture
-        setTimeout(() => {
-          document.getElementById('quiz-section').style.display = 'none';
-          document.getElementById('progress-fill').style.width = '100%';
-          document.getElementById('progress-label').textContent = 'Almost done!';
-          document.getElementById('lead-section').style.display = 'block';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 280);
+        setQ6Back('q5a');
+        goToQuestion('q2a');
       }
+      updateProgress(1);
+    }, 320);
+  }
+
+  function setQ6Back(targetId) {
+    const backBtn = document.querySelector('#q6 .btn-back');
+    if (backBtn) {
+      backBtn.setAttribute('onclick', "goToQuestion('" + targetId + "')");
+    }
+  }
+
+  // ===== SINGLE SELECT =====
+  function selectSingle(btn, qId, val) {
+    const container = btn.closest('.options-list');
+    container.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    state.answers[qId] = val;
+    updateProgress(getProgressCount(qId));
+
+    // Show validation message if present
+    const valEl = document.getElementById('val-' + qId);
+    if (valEl) {
+      setTimeout(() => valEl.classList.add('show'), 80);
     }
 
-    // ===== Q1: AGE =====
-    function selectAge(btn, val) {
-      document.querySelectorAll('.age-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      answers.age = val;
-      advanceQuestion(1);
-    }
+    // Auto-advance with delay
+    const delay = valEl ? 900 : 320;
+    const nextMap = {
+      'q2r': 'q3r',
+      'q4r': 'q5r',
+      'q5r': 'q6',
+      'q2a': 'q3a',
+      'q3a': 'q4a',
+      'q4a': 'q5a',
+      'q5a': 'q6',
+      'q6': 'q7',
+      'q7': null
+    };
 
-    // ===== Q2: PRIMARY CONCERN =====
-    function selectConcern(card) {
-      document.querySelectorAll('.concern-card').forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-      answers.primary = card.dataset.value;
-
-      // Hide matching option in Q3
-      buildSecondaryList();
-      advanceQuestion(2);
-    }
-
-    function buildSecondaryList() {
-      const items = document.querySelectorAll('#secondary-concerns-list .checkbox-item');
-      items.forEach(item => {
-        if (item.dataset.value === answers.primary) {
-          item.style.display = 'none';
-        } else {
-          item.style.display = 'flex';
-        }
-        item.classList.remove('selected');
-      });
-      answers.secondary = [];
-    }
-
-    // ===== Q3: MULTI-SELECT =====
-    function toggleCheckbox(item) {
-      item.classList.toggle('selected');
-      const val = item.dataset.value;
-      if (item.classList.contains('selected')) {
-        if (!answers.secondary.includes(val)) answers.secondary.push(val);
-      } else {
-        answers.secondary = answers.secondary.filter(v => v !== val);
-      }
-    }
-
-    function advanceFromMulti() {
-      advanceQuestion(3);
-    }
-
-    // ===== Q4, Q5, Q6, Q7: SINGLE SELECT =====
-    function selectOption(btn, qId, val) {
-      const container = btn.closest('.options-list');
-      container.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-
-      const qNum = parseInt(qId.replace('q', ''));
-      if (qId === 'q4') answers.feeling = val;
-      if (qId === 'q5') answers.routine = val;
-      if (qId === 'q6') answers.experience = val;
-      if (qId === 'q7') answers.goal = val;
-
-      advanceQuestion(qNum);
-    }
-
-    // ===== LEAD FORM =====
-    function submitLead(e) {
-      e.preventDefault();
-
-      const name = document.getElementById('lead-name').value.trim();
-      const email = document.getElementById('lead-email').value.trim();
-      let valid = true;
-
-      document.getElementById('name-error').style.display = 'none';
-      document.getElementById('email-error').style.display = 'none';
-
-      if (!name) {
-        document.getElementById('name-error').style.display = 'block';
-        valid = false;
-      }
-
-      const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!email || !emailRx.test(email)) {
-        document.getElementById('email-error').style.display = 'block';
-        valid = false;
-      }
-
-      if (!valid) return;
-
-      // Proceed to results
-      showResults(name);
-    }
-
-    // ===== RESULTS =====
-    function showResults(name) {
-      document.getElementById('lead-section').style.display = 'none';
-      document.getElementById('results-section').style.display = 'block';
-
-      const firstName = name.split(' ')[0];
-      document.getElementById('results-greeting').textContent = 'Hi ' + firstName + ',';
-      document.getElementById('results-title').textContent = 'Here\'s what we recommend for your skin';
-
-      // Profile
-      const primary = answers.primary || 'Dull, Tired-Looking Skin';
-      const profile = profiles[primary] || profiles['Dull, Tired-Looking Skin'];
-      document.getElementById('profile-name').textContent = profile.name;
-      document.getElementById('profile-desc').textContent = profile.desc;
-
-      // Scores
-      const scores = calculateScores();
-      const circumference = 201; // 2 * pi * 32
-
+    const next = nextMap[qId];
+    if (next) {
       setTimeout(() => {
-        setMeter('vitality', scores.vitality, circumference);
-        setMeter('readiness', scores.readiness, circumference);
-        setMeter('impact', scores.impact, circumference);
+        if (valEl) valEl.classList.remove('show');
+        goToQuestion(next);
+      }, delay);
+    } else {
+      // Q7 done - show lead
+      setTimeout(() => {
+        showScreen('screen-lead');
+        updateProgress(TOTAL_Q);
+      }, delay);
+    }
+  }
 
-        document.getElementById('vitality-label').textContent = scoreLabel(scores.vitality);
-        document.getElementById('readiness-label').textContent = scoreLabel(scores.readiness);
-        document.getElementById('impact-label').textContent = scoreLabel(scores.impact);
-      }, 200);
+  // ===== CHECKBOX MULTI-SELECT =====
+  function toggleCheck(item) {
+    item.classList.toggle('selected');
+    const val = item.dataset.value;
+    if (item.classList.contains('selected')) {
+      if (!state.triggers.includes(val)) state.triggers.push(val);
+    } else {
+      state.triggers = state.triggers.filter(v => v !== val);
+    }
+  }
 
-      // Treatments
-      const treatments = treatmentMap[primary] || treatmentMap['Dull, Tired-Looking Skin'];
-      const cardsEl = document.getElementById('treatment-cards');
-      cardsEl.innerHTML = '';
-      treatments.forEach(t => {
-        cardsEl.innerHTML += `
-          <div class="treatment-card">
-            <span class="treatment-tag">${t.tag}</span>
-            <div class="treatment-name">${t.name}</div>
-            <p class="treatment-desc">${t.desc}</p>
-            <div class="treatment-why"><strong>Why this works for you:</strong> ${t.why}</div>
-            <a href="https://www.phorest.com/salon/nbskinptyltd" target="_blank" class="btn-book-treatment">Book This Treatment</a>
+  function advanceFromCheckbox(fromId, toId) {
+    updateProgress(getProgressCount(fromId));
+    goToQuestion(toId);
+  }
+
+  // ===== PROGRESS =====
+  function getProgressCount(qId) {
+    const map = {
+      'q1': 1, 'q2r': 2, 'q3r': 3, 'q4r': 4, 'q5r': 5,
+      'q2a': 2, 'q3a': 3, 'q4a': 4, 'q5a': 5,
+      'q6': 6, 'q7': 7
+    };
+    return map[qId] || 0;
+  }
+
+  function updateProgress(count) {
+    const pct = (count / TOTAL_Q) * 100;
+    document.getElementById('progress-fill').style.width = Math.min(pct, 100) + '%';
+  }
+
+  // ===== LEAD FORM =====
+  function submitLead(e) {
+    e.preventDefault();
+    const name = document.getElementById('lead-name').value.trim();
+    const email = document.getElementById('lead-email').value.trim();
+    let valid = true;
+
+    document.getElementById('name-error').style.display = 'none';
+    document.getElementById('email-error').style.display = 'none';
+
+    if (!name) {
+      document.getElementById('name-error').style.display = 'block';
+      valid = false;
+    }
+    const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRx.test(email)) {
+      document.getElementById('email-error').style.display = 'block';
+      valid = false;
+    }
+    if (!valid) return;
+
+    showResults(name);
+  }
+
+  // ===== RESULTS DATA =====
+  const rosaceaProfiles = {
+    'new': {
+      name: 'The Ready Reclaimist',
+      desc: "Your rosacea is new and you're already asking the right questions - that's exactly the right moment to be here. Caught early, with the right guidance, rosacea is something that can be genuinely managed and calmed. Nuala sees this as one of the most hopeful positions to be in."
+    },
+    'few-years': {
+      name: 'The Sensitive Soul',
+      desc: "You've tried. You've researched. You've probably spent more on products that didn't work than you'd like to admit. That exhaustion is real - and it makes complete sense. But the right clinical approach is genuinely different from anything you've tried at home, and Nuala has helped women exactly like you find real, lasting calm."
+    },
+    'most-life': {
+      name: 'The Rosacea Warrior',
+      desc: "You've been carrying this for a long time. Long enough that you've almost stopped believing things can be different. Nuala wants you to know - that belief can change. She has seen women come through her door after decades of struggle and leave with skin they never thought possible. You haven't run out of options. You just haven't found the right one yet."
+    }
+  };
+
+  const ageingProfiles = {
+    'lines': {
+      name: 'The Natural Ager',
+      desc: "You're not trying to look 25. You just want to look like yourself - rested, refreshed, and real. That is the most achievable goal there is, and it's Nuala's favourite kind of brief. The changes you're noticing are normal, and there are genuinely beautiful ways to address them that don't involve a single needle."
+    },
+    'definition': {
+      name: 'The Confidence Rebuilder',
+      desc: "You know what you looked like and you want it back - not a different face, your face. That's not vanity, that's self-knowledge. Loss of definition responds extraordinarily well to the right approach, and Nuala has built her entire career around doing this without surgery, without fillers, without anything that makes you look done."
+    },
+    'dull': {
+      name: 'The Glow Seeker',
+      desc: "You've lost something - that inner light your skin used to have. The good news? It hasn't gone anywhere. It's just been buried under years of stress, sun, and the relentless pace of life. Nuala specialises in exactly this kind of restoration - not adding things, but uncovering what's already there."
+    },
+    'all': {
+      name: 'The Confidence Rebuilder',
+      desc: "When it all feels like it's changed at once, it can be overwhelming. You don't know where to start because everywhere feels like somewhere. That's exactly why having Nuala in your corner matters. She'll look at the whole picture and build a plan that addresses everything - in the right order, at the right pace."
+    }
+  };
+
+  const rosaceaRecs = [
+    {
+      tag: 'Nuala Specialises In This',
+      title: 'Calm &amp; Clear Programme',
+      tagline: 'A structured plan to reduce redness, stop the flare cycle, and give you skin you can rely on - every single day.',
+      nuala: "\"When I understand what's driving your rosacea, everything changes. This isn't about managing symptoms. It's about addressing the source.\"",
+      cta: 'Book a Consultation'
+    },
+    {
+      tag: 'Sustained Change',
+      title: 'Sensitive Skin Reset',
+      tagline: 'A gentle, progressive approach to rebuilding your skin barrier and reducing reactivity without triggering another flare.',
+      nuala: "\"I've worked with sensitive and rosacea-prone skin for 25 years. The right protocol looks nothing like what most women have tried before.\"",
+      cta: 'Book a Consultation'
+    }
+  ];
+
+  const ageingRecs = {
+    'lifted': [
+      {
+        tag: 'No Needles Required',
+        title: 'Natural Renewal Programme',
+        tagline: 'Non-invasive protocols that lift, firm and restore without surgery or injectables - because natural is actually the hardest thing to achieve.',
+        nuala: "\"The results that move me most are the ones where a woman looks in the mirror and says - that's me. Not a different version. Me.\"",
+        cta: 'Book a Consultation'
+      },
+      {
+        tag: 'Structural Change',
+        title: 'Lift &amp; Define Journey',
+        tagline: 'A targeted programme addressing facial contour, jawline definition and skin quality - in a way that builds over time and lasts.',
+        nuala: "\"I approach every face as an individual. What lifts beautifully on one woman is wrong for another. This is where 30 years of experience matters.\"",
+        cta: 'Book a Consultation'
+      }
+    ],
+    'glow': [
+      {
+        tag: 'The Glow Protocol',
+        title: 'Radiance Restoration',
+        tagline: 'A deeply restorative approach that repairs what sun and time have taken - bringing back the vitality and warmth your skin once had.',
+        nuala: "\"Dullness is one of my favourite things to work with because the transformation is so visible, so quickly. Your glow isn't gone. It's just waiting.\"",
+        cta: 'Book a Consultation'
+      },
+      {
+        tag: 'Skin Health First',
+        title: 'Deep Renewal Programme',
+        tagline: 'Rebuilding your skin from the inside out - addressing hydration, tone, texture and luminosity as a complete whole.',
+        nuala: "\"I never just treat the surface. Real radiance comes from healthy skin at every layer. That's what we build together.\"",
+        cta: 'Book a Consultation'
+      }
+    ],
+    'default': [
+      {
+        tag: 'Nuala Specialises In This',
+        title: 'Natural Renewal Programme',
+        tagline: 'Non-invasive protocols that lift, firm and restore - because you deserve to look as good as you feel.',
+        nuala: "\"Thirty years of experience means I can look at your skin and know what it needs. The consultation is where it all begins.\"",
+        cta: 'Book a Consultation'
+      },
+      {
+        tag: 'Your Skin, Your Plan',
+        title: 'Personalised Skin Journey',
+        tagline: 'A plan built entirely around your skin, your goals, and your life - not a generic protocol, a genuinely individual approach.',
+        nuala: "\"Every woman I see gets a plan that belongs to her. What you're experiencing is real, and there is a way through it.\"",
+        cta: 'Book a Consultation'
+      }
+    ]
+  };
+
+  // ===== SCORE LOGIC =====
+  function calculateScores() {
+    const path = state.path;
+    const routine = state.answers['q6'];
+    const barrier = state.answers['q7'];
+
+    let a = 65, b = 60, c = 70; // sensitivity / readiness / transformation
+
+    if (path === 'rosacea') {
+      const durMap = { 'new': { a: 25, b: 10, c: 15 }, 'few-years': { a: 55, b: 15, c: 20 }, 'most-life': { a: 80, b: 20, c: 25 } };
+      const dur = state.answers['q2r'];
+      if (dur && durMap[dur]) { a = durMap[dur].a; c = durMap[dur].c; }
+    } else {
+      a = 35; // ageing - sensitivity score replaced by "concern level"
+      const mirrorMap = { 'all': 85, 'definition': 75, 'lines': 65, 'dull': 60 };
+      const mirror = state.answers['q2a'];
+      if (mirror && mirrorMap[mirror]) c = mirrorMap[mirror];
+    }
+
+    if (routine === 'basic' || routine === 'none') b = 55;
+    if (routine === 'invested') b = 72;
+    if (routine === 'routine') b = 80;
+
+    if (barrier === 'ready') b = Math.min(95, b + 15);
+    if (barrier === 'burnt') b = Math.max(40, b - 5);
+
+    return {
+      a: Math.min(95, Math.max(35, a)),
+      b: Math.min(95, Math.max(40, b)),
+      c: Math.min(95, Math.max(55, c))
+    };
+  }
+
+  function scoreLabel(val) {
+    if (val >= 85) return 'Very High';
+    if (val >= 70) return 'High';
+    if (val >= 55) return 'Moderate';
+    return 'Building';
+  }
+
+  // ===== BUILD RESULTS =====
+  function showResults(name) {
+    showScreen('screen-results');
+    updateProgress(TOTAL_Q);
+
+    const firstName = name.split(' ')[0];
+    document.getElementById('results-greeting').textContent = 'Hi ' + firstName + ',';
+
+    const path = state.path || 'ageing';
+
+    // Profile
+    let profile;
+    if (path === 'rosacea') {
+      const key = state.answers['q2r'] || 'few-years';
+      profile = rosaceaProfiles[key] || rosaceaProfiles['few-years'];
+      document.getElementById('profile-path-tag').textContent = 'Rosacea Path';
+    } else {
+      const key = state.answers['q2a'] || 'all';
+      profile = ageingProfiles[key] || ageingProfiles['all'];
+      document.getElementById('profile-path-tag').textContent = 'Ageing Gracefully Path';
+    }
+
+    document.getElementById('profile-name').textContent = profile.name;
+    document.getElementById('profile-desc').textContent = profile.desc;
+    document.getElementById('results-hero-title').textContent = "Here is what Nuala sees in your answers, " + firstName + ".";
+
+    // Scores
+    const scores = calculateScores();
+    const circ = 201;
+    const labelA = path === 'rosacea' ? 'Sensitivity Level' : 'Concern Level';
+    document.querySelector('#screen-results .score-card:nth-child(1) .score-card-label').textContent = labelA;
+
+    setTimeout(() => {
+      animateMeter('meter-a', scores.a, circ);
+      animateMeter('meter-b', scores.b, circ);
+      animateMeter('meter-c', scores.c, circ);
+      document.getElementById('meter-a-label').textContent = scoreLabel(scores.a);
+      document.getElementById('meter-b-label').textContent = scoreLabel(scores.b);
+      document.getElementById('meter-c-label').textContent = scoreLabel(scores.c);
+    }, 300);
+
+    // Recs
+    let recs;
+    if (path === 'rosacea') {
+      recs = rosaceaRecs;
+      document.getElementById('recs-title').textContent = 'A plan built around calming and reclaiming your skin';
+      document.getElementById('recs-sub').textContent = 'These are the approaches Nuala focuses on for rosacea - structured, progressive, and built around your specific triggers.';
+    } else {
+      const goal = state.answers['q5a'];
+      recs = (goal === 'lifted' || goal === 'confidence') ? ageingRecs['lifted']
+           : (goal === 'glow') ? ageingRecs['glow']
+           : ageingRecs['default'];
+      document.getElementById('recs-title').textContent = 'A plan built around how you want to feel';
+      document.getElementById('recs-sub').textContent = 'These are the approaches Nuala reaches for first - no needles, no surgery, just intelligent, experience-driven care.';
+    }
+
+    const wrap = document.getElementById('rec-cards-wrap');
+    wrap.innerHTML = '';
+    recs.forEach((rec, i) => {
+      wrap.innerHTML += `
+        <div class="rec-card">
+          <div class="rec-card-head">
+            <span class="rec-card-tag">${rec.tag}</span>
+            <div class="rec-card-title">${rec.title}</div>
+            <div class="rec-card-tagline">${rec.tagline}</div>
           </div>
-        `;
-      });
+          <div class="rec-card-body">
+            <p class="rec-card-nuala">${rec.nuala}</p>
+            <a href="https://www.phorest.com/salon/nbskinptyltd" target="_blank" class="rec-card-cta">${rec.cta}</a>
+          </div>
+        </div>
+      `;
+    });
+  }
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  function animateMeter(id, pct, circ) {
+    const offset = circ - (circ * pct / 100);
+    document.getElementById(id).style.strokeDashoffset = offset;
+    document.getElementById(id + '-text').textContent = pct + '%';
+  }
 
-    function setMeter(id, pct, circ) {
-      const offset = circ - (circ * pct / 100);
-      document.getElementById('meter-' + id).style.strokeDashoffset = offset;
-      document.getElementById('meter-' + id + '-text').textContent = pct + '%';
-    }
-
-    // ===== INIT =====
-    // Progress bar hidden on load
-    document.getElementById('progress-wrap').querySelector('.progress-track').style.display = 'block';
+  // ===== INIT =====
+  document.getElementById('progress-wrap').style.visibility = 'hidden';
   </script>
 </body>
 </html>
