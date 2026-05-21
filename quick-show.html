@@ -1036,6 +1036,36 @@ footer {
   .ba-pairs { grid-template-columns:1fr; }
 }
 
+/* ================================================================
+   PRESS LOGOS STRIP
+   ================================================================ */
+.press-strip {
+  margin-bottom: 32px;
+}
+.press-strip-label {
+  font-family: 'Fahkwang', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.press-strip-logos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.press-strip-logos img {
+  height: 20px;
+  width: auto;
+  opacity: 0.35;
+  filter: grayscale(1);
+  transition: opacity 0.2s;
+}
+.press-strip-logos img:hover { opacity: 0.55; }
+
 /* Accessibility */
 a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
 </style>
@@ -1048,7 +1078,7 @@ a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
 <!-- NAV -->
 <nav role="navigation" aria-label="Main navigation">
   <a href="#" class="nav-logo" aria-label="NBSkin home">
-    <img src="https://nbskin.com.au/cdn/shop/files/nbskin-logo-new_200x.png" alt="NBSkin" height="36">
+    <img src="https://nbskin.com.au/cdn/shop/files/nbskin-logo-new.png?v=1762484162&width=400" alt="NBSkin" height="36">
   </a>
   <a href="https://www.phorest.com/salon/nbskinptyltd" class="nav-book" target="_blank" rel="noopener">Book a Consultation</a>
 </nav>
@@ -1061,7 +1091,7 @@ a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
   <!-- Left: Full-column portrait -->
   <div class="hero-portrait" aria-hidden="true">
     <img
-      src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN-151_05ec8619-6340-4897-a1a8-2c0ae2f7009c.jpg?v=1761625962"
+      src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN-161.jpg?v=1761555509"
       alt="Nuala Briggs, Clinical Director and founder of NBSkin, East Fremantle"
       loading="eager"
     >
@@ -1089,6 +1119,18 @@ a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
       <div class="hero-stat">
         <span class="hero-stat-num">6</span>
         <span class="hero-stat-label">Int'l Awards</span>
+      </div>
+    </div>
+
+    <!-- Press logos strip -->
+    <div class="press-strip" aria-label="As featured in">
+      <p class="press-strip-label">As Featured In</p>
+      <div class="press-strip-logos">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-vogue.png?v=1759743339&width=600" alt="Vogue" height="20">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-hello.png?v=1759743339&width=600" alt="Hello" height="20">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-bazaar.png?v=1759743339&width=600" alt="Harper's Bazaar" height="20">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-telegraph.png?v=1759743339&width=600" alt="The Telegraph" height="20">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-times.png?v=1759743339&width=600" alt="The Times" height="20">
       </div>
     </div>
 
@@ -1231,36 +1273,34 @@ a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
 
   <div class="ba-pairs" aria-label="Before and after treatment comparisons">
 
-    <div class="ba-pair" aria-label="Rosacea and redness treatment comparison">
-      <div class="ba-pair-images">
-        <img src="https://nbskin.com.au/cdn/shop/files/redness-mega_400x.png?v=1762570226" alt="Rosacea before treatment" loading="lazy">
-        <div class="ba-line" aria-hidden="true"></div>
-        <img src="https://nbskin.com.au/cdn/shop/files/Hero_image.png?v=1761098409" alt="Clear skin after treatment" loading="lazy" style="object-position:center top;">
-      </div>
-      <p class="ba-pair-label">Rosacea &amp; Redness</p>
-    </div>
-
     <div class="ba-pair" aria-label="Lifting and firming treatment comparison">
       <div class="ba-pair-images">
-        <img src="https://nbskin.com.au/cdn/shop/files/jowls-mega_400x.jpg?v=1762570226" alt="Before lifting and firming treatment" loading="lazy">
+        <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_before.png?v=1760422016" alt="Before lifting and firming treatment" loading="lazy">
         <div class="ba-line" aria-hidden="true"></div>
-        <img src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN-151_05ec8619-6340-4897-a1a8-2c0ae2f7009c.jpg?v=1761625962" alt="After lifting and firming treatment" loading="lazy" style="object-position:center top;">
+        <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_after.png?v=1760422016" alt="After lifting and firming treatment" loading="lazy">
+      </div>
+      <p class="ba-pair-label">Lifting &amp; Firming</p>
+    </div>
+
+    <div class="ba-pair" aria-label="Second lifting and firming comparison">
+      <div class="ba-pair-images">
+        <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_before.png?v=1760422016" alt="Before lifting and firming treatment" loading="lazy">
+        <div class="ba-line" aria-hidden="true"></div>
+        <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_after.png?v=1760422017" alt="After lifting and firming treatment" loading="lazy">
       </div>
       <p class="ba-pair-label">Lifting &amp; Firming</p>
     </div>
 
     <div class="ba-pair" aria-label="Skin renewal treatment comparison">
       <div class="ba-pair-images">
-        <img src="https://nbskin.com.au/cdn/shop/files/stubborn-mega_400x.png?v=1762570226" alt="Before skin renewal treatment" loading="lazy">
+        <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_Before.png?v=1760422017" alt="Before skin renewal treatment" loading="lazy">
         <div class="ba-line" aria-hidden="true"></div>
-        <img src="https://nbskin.com.au/cdn/shop/files/about-banner.png?v=1759999001&width=1920" alt="After skin renewal treatment" loading="lazy" style="object-position:center top;">
+        <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_AFTER.png?v=1760422016" alt="After skin renewal treatment" loading="lazy">
       </div>
-      <p class="ba-pair-label">Total Skin Renewal</p>
+      <p class="ba-pair-label">Skin Renewal</p>
     </div>
 
   </div>
-
-  <p class="ba-placeholder-note">Your actual client results go here - front and centre where they belong.</p>
 
 </section>
 
@@ -1317,7 +1357,7 @@ a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
      ================================================================ -->
 <footer role="contentinfo">
   <div class="footer-logo">
-    <img src="https://nbskin.com.au/cdn/shop/files/nbskin-logo-new_200x.png" alt="NBSkin" height="28">
+    <img src="https://nbskin.com.au/cdn/shop/files/nbskin-logo-new.png?v=1762484162&width=400" alt="NBSkin" height="28">
   </div>
   <div class="footer-details">
     70 Staton Road, East Fremantle 6158 &nbsp;|&nbsp; +61 484 608 877 &nbsp;|&nbsp; nuala@nbskin.com.au

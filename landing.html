@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HIFU Face Tightening | NBSkin East Fremantle</title>
+  <title>Face Lifting &amp; Tightening | NBSkin East Fremantle</title>
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Fahkwang:wght@300;400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1057,6 +1057,37 @@
     }
 
     /* ==========================================
+       PRESS LOGOS STRIP
+    ========================================== */
+    .landing-press-strip {
+      margin-top: 28px;
+    }
+    .landing-press-label {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .landing-press-logos {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .landing-press-logos img {
+      height: 20px;
+      width: auto;
+      opacity: 0.3;
+      filter: grayscale(1);
+      transition: opacity 0.2s;
+      display: inline-block;
+    }
+    .landing-press-logos img:hover { opacity: 0.5; }
+
+    /* ==========================================
        RESPONSIVE
     ========================================== */
     @media (max-width: 1024px) {
@@ -1192,11 +1223,9 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-logo">
       <img
-        src="https://nbskin.com.au/cdn/shop/files/nbskin-logo-new_200x.png"
-        alt="NBSkin logo"
-        onerror="this.style.display='none'"
+        src="https://nbskin.com.au/cdn/shop/files/nbskin-logo-new.png?v=1762484162&width=400"
+        alt="NBSkin"
       />
-      <span class="nav-wordmark">NBSkin</span>
     </div>
     <a
       href="https://www.phorest.com/salon/nbskinptyltd"
@@ -1218,7 +1247,7 @@
     <div class="hero-inner">
 
       <div class="hero-left">
-        <span class="hero-tag" aria-label="Location tag">East Fremantle's HIFU Specialists</span>
+        <span class="hero-tag" aria-label="Location tag">East Fremantle's Skin Tightening Specialists</span>
         <h1 class="hero-h1" id="hero-heading">
           See the Difference<br />Without the Downtime
         </h1>
@@ -1230,19 +1259,31 @@
           class="hero-cta"
           target="_blank"
           rel="noopener"
-          aria-label="Book your HIFU consultation at NBSkin"
+          aria-label="Book your consultation at NBSkin"
         >
-          Book Your HIFU Consultation
+          Book Your Consultation
         </a>
         <p class="hero-trust">
-          30+ years experience<span aria-hidden="true">|</span> First HIFU clinic in WA<span aria-hidden="true">|</span> Thousands of treatments
+          30+ years experience<span aria-hidden="true">|</span> First in WA<span aria-hidden="true">|</span> Thousands of treatments
         </p>
+
+        <!-- Press logos strip -->
+        <div class="landing-press-strip" aria-label="As featured in">
+          <p class="landing-press-label">As Featured In</p>
+          <div class="landing-press-logos">
+            <img src="https://nbskin.com.au/cdn/shop/files/partner-vogue.png?v=1759743339&width=600" alt="Vogue" height="20">
+            <img src="https://nbskin.com.au/cdn/shop/files/partner-hello.png?v=1759743339&width=600" alt="Hello" height="20">
+            <img src="https://nbskin.com.au/cdn/shop/files/partner-bazaar.png?v=1759743339&width=600" alt="Harper's Bazaar" height="20">
+            <img src="https://nbskin.com.au/cdn/shop/files/partner-telegraph.png?v=1759743339&width=600" alt="The Telegraph" height="20">
+            <img src="https://nbskin.com.au/cdn/shop/files/partner-times.png?v=1759743339&width=600" alt="The Times" height="20">
+          </div>
+        </div>
       </div>
 
       <div class="hero-right" aria-label="Treatment offer summary">
         <div class="offer-card">
           <p class="offer-card-label">Signature Treatment</p>
-          <h2>HIFU Face Tightening</h2>
+          <h2>Lifting &amp; Tightening</h2>
           <p class="offer-card-from">From one session</p>
           <div class="offer-card-divider" aria-hidden="true"></div>
           <ul class="offer-card-features" aria-label="Treatment benefits">
@@ -1307,7 +1348,7 @@
     <div class="quotes-closer">
       <p>
         If any of that sounds familiar - you're exactly who
-        <em>HIFU was designed for.</em>
+        <em>Nuala's approach was designed for.</em>
       </p>
     </div>
   </section>
@@ -1331,7 +1372,7 @@
           <span class="step-number" aria-hidden="true">01</span>
           <h3 class="step-title">We Listen</h3>
           <p class="step-desc">
-            Tell Nuala your concerns. She'll assess your skin and recommend whether HIFU is right for you - no pressure, just honest expert advice.
+            Tell Nuala your concerns. She'll assess your skin and recommend the right treatment for you - no pressure, just honest expert advice.
           </p>
           <span class="step-connector" aria-hidden="true"></span>
         </div>
@@ -1383,32 +1424,50 @@
     <div class="section-inner">
       <div class="results-grid">
 
-        <div class="result-card" role="article" aria-label="Rosacea and redness result">
-          <div class="result-image-area" style="overflow:hidden;">
-            <img src="https://nbskin.com.au/cdn/shop/files/redness-mega_400x.png?v=1762570226" alt="Rosacea treatment results" style="width:100%;height:100%;object-fit:cover;">
+        <div class="result-card" role="article" aria-label="Lifting and firming result">
+          <div class="result-image-area" style="overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
+            <div class="result-labels">
+              <span class="result-label before">Before</span>
+              <span class="result-label after">After</span>
+            </div>
+            <div class="result-divider-line" aria-hidden="true"></div>
+            <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_before.png?v=1760422016" alt="Before lifting and firming treatment" style="width:100%;height:100%;object-fit:cover;">
+            <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_after.png?v=1760422016" alt="After lifting and firming treatment" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="result-info">
-            <p class="result-area">Calm, Clear Skin</p>
-            <p class="result-desc">Redness reduced, flare-ups controlled, confidence restored.</p>
+            <p class="result-area">Lifting &amp; Firming</p>
+            <p class="result-desc">Definition restored, profile lifted - naturally, without surgery.</p>
           </div>
         </div>
 
-        <div class="result-card" role="article" aria-label="Lifting and firming result">
-          <div class="result-image-area" style="overflow:hidden;">
-            <img src="https://nbskin.com.au/cdn/shop/files/jowls-mega_400x.jpg?v=1762570226" alt="Lifting and firming results" style="width:100%;height:100%;object-fit:cover;">
+        <div class="result-card" role="article" aria-label="Lifting and firming result 2">
+          <div class="result-image-area" style="overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
+            <div class="result-labels">
+              <span class="result-label before">Before</span>
+              <span class="result-label after">After</span>
+            </div>
+            <div class="result-divider-line" aria-hidden="true"></div>
+            <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_before.png?v=1760422016" alt="Before lifting and firming treatment" style="width:100%;height:100%;object-fit:cover;">
+            <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_after.png?v=1760422017" alt="After lifting and firming treatment" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="result-info">
-            <p class="result-area">Lifted and Defined</p>
-            <p class="result-desc">A cleaner, firmer profile - naturally achieved without surgery.</p>
+            <p class="result-area">Lifting &amp; Firming</p>
+            <p class="result-desc">A cleaner, firmer profile - zero downtime, no needles required.</p>
           </div>
         </div>
 
         <div class="result-card" role="article" aria-label="Skin renewal result">
-          <div class="result-image-area" style="overflow:hidden;">
-            <img src="https://nbskin.com.au/cdn/shop/files/Hero_image.png?v=1761098409" alt="Skin renewal results" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          <div class="result-image-area" style="overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
+            <div class="result-labels">
+              <span class="result-label before">Before</span>
+              <span class="result-label after">After</span>
+            </div>
+            <div class="result-divider-line" aria-hidden="true"></div>
+            <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_Before.png?v=1760422017" alt="Before skin renewal treatment" style="width:100%;height:100%;object-fit:cover;">
+            <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_AFTER.png?v=1760422016" alt="After skin renewal treatment" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="result-info">
-            <p class="result-area">Renewed and Radiant</p>
+            <p class="result-area">Skin Renewal</p>
             <p class="result-desc">That lit-from-within glow that makes you feel like yourself again.</p>
           </div>
         </div>
@@ -1416,7 +1475,7 @@
       </div>
 
       <div class="results-note">
-        <p>Before and after photos available during your consultation with Nuala</p>
+        <p>Real results from real NBSkin clients. Further photos available during your private consultation with Nuala.</p>
       </div>
     </div>
   </section>
@@ -1425,14 +1484,14 @@
        MID-PAGE CTA
   ========================================== -->
   <section class="mid-cta-section" aria-labelledby="mid-cta-heading">
-    <h2 id="mid-cta-heading">Ready to See What HIFU Can Do for You?</h2>
+    <h2 id="mid-cta-heading">Ready to See What's Possible for Your Skin?</h2>
     <p>Book a consultation with Nuala - no pressure, just honest expert advice tailored to your skin.</p>
     <a
       href="https://www.phorest.com/salon/nbskinptyltd"
       class="mid-cta-btn"
       target="_blank"
       rel="noopener"
-      aria-label="Book your HIFU consultation at NBSkin"
+      aria-label="Book your consultation at NBSkin"
     >
       Book Your Consultation
     </a>
@@ -1446,7 +1505,7 @@
       <span class="testimonial-star" aria-label="Five star review" role="img">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
       <blockquote>
         <p class="testimonial-quote" id="testimonial-heading">
-          "Nuala is extremely knowledgeable and experienced in her field. I've had my second HIFU treatment after great results from the first one 18 months ago."
+          "Nuala is extremely knowledgeable and experienced in her field. I've had my second treatment after great results from the first one 18 months ago."
         </p>
         <footer class="testimonial-source">
           Verified NBSkin Client
@@ -1472,7 +1531,7 @@
             aria-controls="faq-answer-1"
             id="faq-btn-1"
           >
-            <span class="faq-question-text">Does HIFU hurt?</span>
+            <span class="faq-question-text">Does the treatment hurt?</span>
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer-wrap" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">
@@ -1540,12 +1599,12 @@
             aria-controls="faq-answer-5"
             id="faq-btn-5"
           >
-            <span class="faq-question-text">Is HIFU right for me?</span>
+            <span class="faq-question-text">Is this treatment right for me?</span>
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer-wrap" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5">
             <p class="faq-answer">
-              HIFU works beautifully for women experiencing mild to moderate skin laxity who want natural-looking results without surgery. During your consultation, Nuala will assess your skin and recommend the best approach for you specifically.
+              Non-invasive lifting works beautifully for women experiencing mild to moderate skin laxity who want natural-looking results without surgery. During your consultation, Nuala will assess your skin and recommend the best approach for you specifically.
             </p>
           </div>
         </div>
@@ -1557,12 +1616,12 @@
             aria-controls="faq-answer-6"
             id="faq-btn-6"
           >
-            <span class="faq-question-text">Why choose NBSkin for HIFU?</span>
+            <span class="faq-question-text">Why choose NBSkin?</span>
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer-wrap" id="faq-answer-6" role="region" aria-labelledby="faq-btn-6">
             <p class="faq-answer">
-              NBSkin was one of the first clinics in Western Australia to offer HIFU. With over 30 years of experience and thousands of treatments performed, Nuala has the depth of expertise and clinical intuition that newer clinics simply haven't had the time to develop. You're in very experienced hands.
+              NBSkin was one of the first clinics in Western Australia to pioneer advanced non-invasive treatments. With over 30 years of experience and thousands of treatments performed, Nuala has the depth of expertise and clinical intuition that newer clinics simply haven't had the time to develop. You're in very experienced hands.
             </p>
           </div>
         </div>
@@ -1586,7 +1645,7 @@
           class="final-btn-primary"
           target="_blank"
           rel="noopener"
-          aria-label="Book your HIFU consultation online"
+          aria-label="Book your consultation online at NBSkin"
         >
           Book Now
         </a>

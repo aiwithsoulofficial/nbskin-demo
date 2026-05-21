@@ -1434,6 +1434,37 @@
     }
 
     /* ========================================
+       PRESS LOGOS STRIP (hero)
+    ======================================== */
+    .hero-press-strip {
+      margin-top: 32px;
+    }
+    .hero-press-label {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .hero-press-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-press-logos img {
+      height: 22px;
+      width: auto;
+      opacity: 0.3;
+      filter: grayscale(1);
+      transition: opacity 0.2s;
+      display: inline-block;
+    }
+    .hero-press-logos img:hover { opacity: 0.5; }
+
+    /* ========================================
        RESPONSIVE
     ======================================== */
     @media (max-width: 1024px) {
@@ -1636,8 +1667,7 @@
   ============================== -->
   <nav class="nav" id="main-nav">
     <div class="nav-logo">
-      <img src="https://nbskin.com.au/cdn/shop/files/nbskin-logo-new_200x.png" alt="NBSkin logo" />
-      <span class="nav-wordmark">NBSkin</span>
+      <img src="https://nbskin.com.au/cdn/shop/files/nbskin-logo-new.png?v=1762484162&width=400" alt="NBSkin" />
     </div>
     <ul class="nav-links">
       <li><a href="#treatments">Treatments</a></li>
@@ -1696,6 +1726,19 @@
               <span class="proof-label">Int'l Awards</span>
             </div>
           </div>
+
+          <!-- Press logos strip -->
+          <div class="hero-press-strip" aria-label="As featured in">
+            <p class="hero-press-label">As Featured In</p>
+            <div class="hero-press-logos">
+              <img src="https://nbskin.com.au/cdn/shop/files/partner-vogue.png?v=1759743339&width=600" alt="Vogue" height="22">
+              <img src="https://nbskin.com.au/cdn/shop/files/partner-hello.png?v=1759743339&width=600" alt="Hello" height="22">
+              <img src="https://nbskin.com.au/cdn/shop/files/partner-bazaar.png?v=1759743339&width=600" alt="Harper's Bazaar" height="22">
+              <img src="https://nbskin.com.au/cdn/shop/files/partner-telegraph.png?v=1759743339&width=600" alt="The Telegraph" height="22">
+              <img src="https://nbskin.com.au/cdn/shop/files/partner-times.png?v=1759743339&width=600" alt="The Times" height="22">
+            </div>
+          </div>
+
         </div>
 
         <!-- Image column -->
@@ -1706,7 +1749,7 @@
 
           <div class="hero-image-frame">
             <img
-              src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN-151_05ec8619-6340-4897-a1a8-2c0ae2f7009c.jpg?v=1761625962"
+              src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN-161.jpg?v=1761555509"
               alt="Nuala Briggs - Perth's Rosacea and Anti-Ageing Specialist"
               style="object-position:center top;"
             />
@@ -1783,54 +1826,58 @@
 
         <div class="results-grid">
 
-          <!-- Result 1 - HIFU -->
+          <!-- Result 1 - Lifting & Firming B&A -->
           <div class="result-card">
-            <div class="result-card-image">
-              <img src="https://nbskin.com.au/cdn/shop/files/hero1.png" alt="HIFU Face Tightening treatment at NBSkin" />
+            <div class="result-card-image" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
+              <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_before.png?v=1760422016" alt="Before lifting and firming treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
+              <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_after.png?v=1760422016" alt="After lifting and firming treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
               <div class="result-card-badge">First in WA</div>
             </div>
             <div class="result-card-body">
-              <div class="result-card-title">HIFU Face Tightening</div>
-              <p class="result-card-desc">The non-surgical facelift. Targeted ultrasound energy lifts and firms without a single needle.</p>
+              <div class="result-card-title">Lifting &amp; Firming</div>
+              <p class="result-card-desc">The non-surgical lift. Targeted energy restores definition and firms without a single needle.</p>
               <a href="https://www.phorest.com/salon/nbskinptyltd" class="result-card-link" target="_blank">Learn More</a>
             </div>
           </div>
 
-          <!-- Result 2 - NeoGen -->
+          <!-- Result 2 - Skin Renewal B&A -->
           <div class="result-card">
-            <div class="result-card-image">
-              <img src="https://nbskin.com.au/cdn/shop/files/Hero_image.png" alt="NeoGen Plasma skin renewal at NBSkin" />
+            <div class="result-card-image" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
+              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_Before.png?v=1760422017" alt="Before skin renewal treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
+              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_AFTER.png?v=1760422016" alt="After skin renewal treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
               <div class="result-card-badge">6 Awards</div>
             </div>
             <div class="result-card-body">
-              <div class="result-card-title">NeoGen Plasma</div>
-              <p class="result-card-desc">Award-winning skin renewal. Regenerates at the cellular level for smoother, clearer, younger-looking skin.</p>
+              <div class="result-card-title">Skin Renewal</div>
+              <p class="result-card-desc">Award-winning cellular renewal. Smoother, clearer, younger-looking skin - results that speak for themselves.</p>
               <a href="https://www.phorest.com/salon/nbskinptyltd" class="result-card-link" target="_blank">Learn More</a>
             </div>
           </div>
 
-          <!-- Result 3 - Sofwave -->
+          <!-- Result 3 - Lifting B&A 2 -->
           <div class="result-card">
-            <div class="result-card-image">
-              <img src="https://nbskin.com.au/cdn/shop/files/hero2.png" alt="Sofwave ultrasound rejuvenation at NBSkin" />
-              <div class="result-card-badge">Next-Gen</div>
+            <div class="result-card-image" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
+              <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_before.png?v=1760422016" alt="Before lifting treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
+              <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_after.png?v=1760422017" alt="After lifting treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
+              <div class="result-card-badge">No Downtime</div>
             </div>
             <div class="result-card-body">
-              <div class="result-card-title">Sofwave</div>
-              <p class="result-card-desc">Next-generation ultrasound rejuvenation. Remarkable skin tightening with zero downtime.</p>
+              <div class="result-card-title">Jawline &amp; Contour</div>
+              <p class="result-card-desc">Remarkable definition restored - zero downtime, no needles, no surgery required.</p>
               <a href="https://www.phorest.com/salon/nbskinptyltd" class="result-card-link" target="_blank">Learn More</a>
             </div>
           </div>
 
-          <!-- Result 4 - TESLA -->
+          <!-- Result 4 - Skin Renewal B&A 2 -->
           <div class="result-card">
-            <div class="result-card-image">
-              <img src="https://nbskin.com.au/cdn/shop/files/hero1.png" alt="TESLA body sculpting at NBSkin" />
+            <div class="result-card-image" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
+              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN2_-_Before.png?v=1760422017" alt="Before skin renewal treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
+              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN2_-_After.png?v=1760422016" alt="After skin renewal treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
               <div class="result-card-badge">First in WA</div>
             </div>
             <div class="result-card-body">
-              <div class="result-card-title">TESLA Former</div>
-              <p class="result-card-desc">Body sculpting and muscle toning. Thousands of contractions per session - no effort required from you.</p>
+              <div class="result-card-title">Total Skin Renewal</div>
+              <p class="result-card-desc">Texture, tone, radiance - comprehensively restored at the cellular level.</p>
               <a href="https://www.phorest.com/salon/nbskinptyltd" class="result-card-link" target="_blank">Learn More</a>
             </div>
           </div>
