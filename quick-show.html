@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBSkin - What's Possible</title>
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Fahkwang:wght@300;400;600&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep: #2C2631;
+  --accent: #C4A47C;
+  --accent-light: #D4C4A8;
+  --rose: #D4B8A8;
+  --cream: #FBF8F5;
+  --white: #FFFFFF;
+  --text: #2A2A2A;
+  --text-light: #666;
+  --text-muted: #999;
+  --cc-dark: #0A2A28;
+  --cc-teal: #00D4BC;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Mulish',sans-serif; color:var(--text); background:var(--white); }
+
+.demo-banner {
+  background:var(--cc-dark); color:var(--cc-teal); text-align:center; padding:10px 20px;
+  font-family:'Fahkwang',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+}
+
+nav {
+  background:rgba(255,255,255,0.97); backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(44,38,49,0.08);
+  padding:16px 40px; display:flex; align-items:center; justify-content:space-between;
+  position:sticky; top:0; z-index:100;
+}
+.nav-logo { font-family:'Sacramento',cursive; font-size:1.8rem; color:var(--deep); }
+.nav-cta {
+  padding:12px 28px; background:var(--deep); color:var(--cream);
+  font-family:'Fahkwang',sans-serif; font-size:0.7rem; font-weight:600;
+  letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; transition:background 0.2s;
+}
+.nav-cta:hover { background:var(--accent); }
+
+/* HERO */
+.hero {
+  padding:80px 40px 60px; background:var(--cream); position:relative; overflow:hidden;
+}
+.hero::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(196,164,124,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 1px 1px, rgba(44,38,49,0.012) 1px, transparent 0);
+  background-size:100% 100%, 26px 26px;
+  pointer-events:none;
+}
+.hero-content {
+  max-width:1200px; margin:0 auto; position:relative; z-index:1;
+}
+.hero-top {
+  display:grid; grid-template-columns:1fr 1.4fr; gap:48px; align-items:center; margin-bottom:48px;
+}
+.hero-tag {
+  display:inline-block; font-family:'Fahkwang',sans-serif; font-size:0.65rem; font-weight:600;
+  letter-spacing:3px; text-transform:uppercase; color:var(--accent);
+  border:1px solid var(--accent); padding:5px 14px; margin-bottom:24px;
+}
+.hero h1 {
+  font-family:'Fahkwang',sans-serif; font-weight:400; font-size:2.4rem;
+  line-height:1.2; color:var(--deep); margin-bottom:20px;
+}
+.hero-sub {
+  font-size:1.05rem; color:var(--text-light); font-weight:300; margin-bottom:32px; line-height:1.8;
+}
+.hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
+.btn-primary {
+  display:inline-block; padding:16px 32px; background:var(--deep); color:var(--cream);
+  font-family:'Fahkwang',sans-serif; font-size:0.8rem; font-weight:600;
+  letter-spacing:1px; text-transform:uppercase; text-decoration:none; transition:all 0.2s;
+}
+.btn-primary:hover { background:var(--accent); }
+.btn-secondary {
+  display:inline-block; padding:16px 32px; background:transparent; color:var(--deep);
+  font-family:'Fahkwang',sans-serif; font-size:0.8rem; font-weight:600;
+  letter-spacing:1px; text-transform:uppercase; text-decoration:none;
+  border:2px solid var(--deep); transition:all 0.2s;
+}
+.btn-secondary:hover { background:var(--deep); color:var(--cream); }
+
+/* B&A GRID - HERO PRIME REAL ESTATE */
+.ba-hero-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+}
+.ba-card {
+  background:var(--white); border:1px solid rgba(44,38,49,0.08); overflow:hidden;
+  box-shadow:0 2px 16px rgba(44,38,49,0.06); transition:all 0.3s;
+}
+.ba-card:hover { transform:translateY(-4px); box-shadow:0 8px 30px rgba(44,38,49,0.1); }
+.ba-images {
+  display:grid; grid-template-columns:1fr 1fr; position:relative;
+}
+.ba-images .ba-side {
+  aspect-ratio:1; background:var(--cream-dark); overflow:hidden;
+  margin:0; border-radius:0;
+}
+.ba-images .ba-divider {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:28px; height:28px; background:var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; z-index:2;
+  font-size:0.55rem; color:var(--white); font-weight:600;
+}
+.ba-label {
+  padding:12px 16px; text-align:center;
+  font-family:'Fahkwang',sans-serif; font-size:0.7rem; font-weight:600;
+  letter-spacing:1px; text-transform:uppercase; color:var(--deep);
+  border-top:1px solid rgba(44,38,49,0.06);
+}
+.ba-label span {
+  display:block; font-family:'Mulish',sans-serif; font-size:0.7rem;
+  font-weight:300; color:var(--text-muted); letter-spacing:0; text-transform:none; margin-top:2px;
+}
+.ba-note {
+  text-align:center; margin-top:20px; font-size:0.8rem; color:var(--text-light);
+  font-style:italic; font-weight:300;
+}
+
+/* NUALA PHOTO IN HERO */
+.nuala-hero {
+  display:flex; align-items:center; gap:20px;
+}
+.nuala-photo {
+  width:200px; height:200px; border-radius:50%; overflow:hidden;
+  border:3px solid var(--accent); flex-shrink:0;
+  background:var(--cream-dark);
+}
+.nuala-photo-placeholder {
+  font-family:'Fahkwang',sans-serif; font-size:0.55rem; font-weight:600;
+  letter-spacing:1px; text-transform:uppercase; color:var(--text-muted);
+  text-align:center; line-height:1.6; padding:20px;
+}
+.nuala-intro {
+  font-family:'Fahkwang',sans-serif; font-size:0.85rem; font-weight:400;
+  color:var(--deep); line-height:1.6;
+}
+.nuala-intro strong { font-weight:600; }
+.nuala-intro .quote {
+  font-style:italic; color:var(--accent); margin-top:8px; display:block;
+  font-family:'Mulish',sans-serif; font-size:0.9rem;
+}
+
+.hero-proof {
+  display:flex; gap:32px; margin-top:32px; padding-top:24px;
+  border-top:1px solid rgba(44,38,49,0.1);
+}
+.proof-num { font-family:'Fahkwang',sans-serif; font-weight:400; font-size:1.6rem; color:var(--deep); line-height:1; }
+.proof-label { font-size:0.7rem; color:var(--text-muted); letter-spacing:0.5px; margin-top:4px; }
+
+/* NUALA STORY */
+.story {
+  padding:80px 40px; background:var(--white);
+}
+.story-inner {
+  max-width:1000px; margin:0 auto; display:grid;
+  grid-template-columns:1fr 1.2fr; gap:60px; align-items:center;
+}
+.story-photo {
+  aspect-ratio:3/4; background:var(--cream); border-radius:8px; overflow:hidden;
+  position:relative;
+}
+.story-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+.story-badge {
+  position:absolute; top:20px; left:20px;
+  background:var(--deep); color:var(--accent); padding:8px 16px;
+  font-family:'Fahkwang',sans-serif; font-size:0.65rem; font-weight:600;
+  letter-spacing:2px; text-transform:uppercase;
+}
+.story-label {
+  font-family:'Fahkwang',sans-serif; font-size:0.65rem; font-weight:600;
+  letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:16px;
+}
+.story h2 {
+  font-family:'Fahkwang',sans-serif; font-weight:400; font-size:1.8rem;
+  color:var(--deep); margin-bottom:20px; line-height:1.3;
+}
+.story p { font-size:1rem; color:var(--text-light); line-height:1.8; margin-bottom:16px; font-weight:300; }
+.story .creds {
+  display:flex; flex-wrap:wrap; gap:8px; margin-top:24px;
+}
+.cred-tag {
+  padding:6px 14px; border:1px solid rgba(44,38,49,0.15);
+  font-family:'Fahkwang',sans-serif; font-size:0.6rem; font-weight:600;
+  letter-spacing:1px; text-transform:uppercase; color:var(--text-light);
+}
+
+/* RESULTS */
+.results {
+  padding:80px 40px; background:var(--deep); color:var(--cream);
+}
+.results-inner { max-width:1100px; margin:0 auto; text-align:center; }
+.results .section-label {
+  font-family:'Fahkwang',sans-serif; font-size:0.65rem; font-weight:600;
+  letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:12px;
+}
+.results h2 {
+  font-family:'Fahkwang',sans-serif; font-weight:400; font-size:1.8rem;
+  color:var(--white); margin-bottom:48px;
+}
+.results-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:24px; text-align:left;
+}
+.result-card {
+  background:rgba(255,255,255,0.04); border:1px solid rgba(196,164,124,0.15);
+  padding:32px 24px; transition:all 0.3s;
+}
+.result-card:hover { border-color:var(--accent); transform:translateY(-4px); }
+.result-card h3 {
+  font-family:'Fahkwang',sans-serif; font-weight:400; font-size:1rem;
+  color:var(--accent); margin-bottom:8px;
+}
+.result-card p { font-size:0.85rem; color:rgba(200,200,200,0.7); line-height:1.6; font-weight:300; }
+.result-card .tag {
+  display:inline-block; margin-top:16px; font-family:'Fahkwang',sans-serif;
+  font-size:0.6rem; font-weight:600; letter-spacing:1px; text-transform:uppercase;
+  color:var(--accent); border:1px solid var(--accent); padding:4px 10px;
+}
+
+/* TESTIMONIALS */
+.testimonials { padding:80px 40px; background:var(--cream); }
+.testimonials-inner { max-width:1000px; margin:0 auto; text-align:center; }
+.testimonials .section-label {
+  font-family:'Fahkwang',sans-serif; font-size:0.65rem; font-weight:600;
+  letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:12px;
+}
+.testimonials h2 {
+  font-family:'Fahkwang',sans-serif; font-weight:400; font-size:1.8rem;
+  color:var(--deep); margin-bottom:48px;
+}
+.testimonial-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; text-align:left; }
+.testimonial-card {
+  background:var(--white); padding:32px 24px; border:1px solid rgba(44,38,49,0.06);
+  box-shadow:0 2px 20px rgba(44,38,49,0.04); position:relative;
+}
+.testimonial-card::before {
+  content:'\201C'; font-family:Georgia,serif; font-size:4rem;
+  color:var(--accent); opacity:0.3; position:absolute; top:8px; left:16px; line-height:1;
+}
+.testimonial-card p {
+  font-size:0.9rem; color:var(--text-light); line-height:1.7; font-style:italic;
+  font-weight:300; padding-top:24px;
+}
+.testimonial-card .attr {
+  margin-top:16px; font-family:'Fahkwang',sans-serif; font-size:0.6rem; font-weight:600;
+  letter-spacing:1px; text-transform:uppercase; color:var(--accent);
+}
+
+/* CTA */
+.final-cta {
+  padding:80px 40px; background:var(--deep); text-align:center;
+  position:relative; overflow:hidden;
+}
+.final-cta::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at 1px 1px, rgba(196,164,124,0.06) 1px, transparent 0);
+  background-size:30px 30px;
+}
+.final-cta-inner { position:relative; z-index:1; max-width:600px; margin:0 auto; }
+.final-cta h2 {
+  font-family:'Fahkwang',sans-serif; font-weight:400; font-size:1.8rem;
+  color:var(--white); margin-bottom:16px;
+}
+.final-cta p { font-size:1rem; color:rgba(200,200,200,0.7); margin-bottom:32px; line-height:1.7; font-weight:300; }
+.final-cta .btn-primary { background:var(--accent); color:var(--deep); }
+.final-cta .btn-primary:hover { background:var(--white); }
+.final-cta .trust {
+  margin-top:24px; font-size:0.75rem; color:rgba(200,200,200,0.4);
+  letter-spacing:0.5px;
+}
+
+footer {
+  background:var(--deep); border-top:1px solid rgba(196,164,124,0.1);
+  padding:32px 40px; text-align:center;
+}
+footer .logo { font-family:'Sacramento',cursive; font-size:1.4rem; color:var(--accent); margin-bottom:8px; }
+footer p { font-size:0.75rem; color:rgba(200,200,200,0.4); line-height:1.8; }
+
+@media(max-width:768px){
+  .hero-top { grid-template-columns:1fr; gap:32px; }
+  .hero h1 { font-size:1.8rem; }
+  .hero-proof { gap:16px; flex-wrap:wrap; }
+  .ba-hero-grid { grid-template-columns:1fr; }
+  .nuala-hero { flex-direction:column; text-align:center; }
+  .nuala-photo { width:140px; height:140px; }
+  .story-inner { grid-template-columns:1fr; }
+  .story-photo { max-height:400px; }
+  .results-grid { grid-template-columns:1fr; }
+  .testimonial-grid { grid-template-columns:1fr; }
+  nav { padding:12px 20px; }
+  .hero, .story, .results, .testimonials, .final-cta { padding:60px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="demo-banner">Clinic Catalyst Demo - What Your New Website Could Look Like</div>
+
+<nav>
+  <div class="nav-logo">NBSkin</div>
+  <a href="https://www.phorest.com/salon/nbskinptyltd" class="nav-cta" target="_blank">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <!-- TOP: Nuala + headline -->
+    <div class="hero-top">
+      <div>
+        <div class="hero-tag">East Fremantle's Rosacea &amp; Skin Rejuvenation Specialist</div>
+        <h1>Results That Speak for Themselves</h1>
+        <p class="hero-sub">Most of Nuala's clients walk in and say the same thing: "I want to look like you." With three decades specialising in rosacea, sensitive skin and advanced rejuvenation - she knows exactly how to get you there.</p>
+        <div class="hero-actions">
+          <a href="https://www.phorest.com/salon/nbskinptyltd" class="btn-primary" target="_blank">Book a Consultation</a>
+          <a href="#results" class="btn-secondary">See Results</a>
+        </div>
+      </div>
+      <div class="nuala-hero">
+        <div class="nuala-photo">
+          <img src="https://nbskin.com.au/cdn/shop/files/Untitled_design_24.webp?v=1761624219" alt="Nuala Briggs - Clinical Director NBSkin" style="width:100%;height:100%;object-fit:cover;object-position:left center;">
+        </div>
+        <div class="nuala-intro">
+          <strong>Nuala Briggs</strong> - Clinical Director<br>
+          30+ years transforming skin<br>
+          London College of Fashion trained<br>
+          Featured in Vogue, Harpers, Hello &amp; BBC
+          <span class="quote">"My clients don't come to look different. They come to look like the version of themselves they remember."</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEFORE & AFTERS - PRIME REAL ESTATE -->
+    <div class="ba-hero-grid">
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-side"><img src="https://nbskin.com.au/cdn/shop/files/redness-mega_400x.png?v=1762570226" alt="Rosacea before treatment" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="ba-divider">VS</div>
+          <div class="ba-side"><img src="https://nbskin.com.au/cdn/shop/files/Hero_image.png?v=1761098409" alt="Clear skin after treatment" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        </div>
+        <div class="ba-label">Rosacea Treatment<span>Calm, clear, confident skin</span></div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-side"><img src="https://nbskin.com.au/cdn/shop/files/jowls-mega_400x.jpg?v=1762570226" alt="Before HIFU treatment" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="ba-divider">VS</div>
+          <div class="ba-side"><img src="https://nbskin.com.au/cdn/shop/files/hero1.png?v=1759731732" alt="After HIFU treatment" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        </div>
+        <div class="ba-label">HIFU Face Tightening<span>Non-surgical lifting and firming</span></div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-side"><img src="https://nbskin.com.au/cdn/shop/files/stubborn-mega_400x.png?v=1762570226" alt="Before body treatment" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="ba-divider">VS</div>
+          <div class="ba-side"><img src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN314_5eb55fcf-f461-4f87-882d-12707b32a736_400x.jpg?v=1762570482" alt="During advanced treatment at NBSkin" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+        <div class="ba-label">NeoGen Plasma<span>Award-winning skin renewal</span></div>
+      </div>
+    </div>
+    <p class="ba-note">Your real before and after photos will replace these - the most powerful sales tool you have, front and centre</p>
+
+    <div class="hero-proof">
+      <div><div class="proof-num">30+</div><div class="proof-label">Years Experience</div></div>
+      <div><div class="proof-num">1000s</div><div class="proof-label">Women Treated</div></div>
+      <div><div class="proof-num">96%</div><div class="proof-label">Recommend</div></div>
+      <div><div class="proof-num">6</div><div class="proof-label">Int'l Awards</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUALA'S STORY -->
+<section class="story">
+  <div class="story-inner">
+    <div class="story-photo">
+      <img src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN314_5eb55fcf-f461-4f87-882d-12707b32a736_400x.jpg?v=1762570482" alt="Nuala Briggs performing advanced treatment at NBSkin East Fremantle" style="object-position:center top;">
+      <div class="story-badge">30+ Years</div>
+    </div>
+    <div>
+      <div class="story-label">Meet Your Skin Expert</div>
+      <h2>East Fremantle's Rosacea Specialist Who Transforms Confidence</h2>
+      <p>Trained at the London College of Fashion with a Distinction in Advanced Aesthetics, Nuala has spent over three decades specialising in rosacea, sensitive skin and advanced rejuvenation. She was one of the first practitioners in Western Australia to bring HIFU, TESLA and NeoGen Plasma to her clients - because she believes every woman deserves access to the latest, most effective treatments.</p>
+      <p>Featured in Vogue, Harpers and Hello magazine, and the subject of a BBC documentary on skin health, Nuala is recognised globally for her expertise. She trains nurses and therapists across Australia - but her heart is in her East Fremantle clinic, working one-on-one with women who are ready to feel like themselves again.</p>
+      <p style="color:var(--deep);font-weight:400;font-style:italic;">"My clients don't come to look different. They come to look like the version of themselves they remember."</p>
+      <div class="creds">
+        <span class="cred-tag">Vogue</span>
+        <span class="cred-tag">Harpers</span>
+        <span class="cred-tag">Hello</span>
+        <span class="cred-tag">BBC</span>
+        <span class="cred-tag">London College of Fashion</span>
+        <span class="cred-tag">First in WA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="results-inner">
+    <div class="section-label">What Becomes Possible</div>
+    <h2>Treatments That Deliver Real, Visible Results</h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <h3>Rosacea &amp; Sensitive Skin</h3>
+        <p>Nuala's signature speciality. Targeted treatments that calm inflammation, reduce redness and restore an even, confident complexion - even for the most reactive skin.</p>
+        <span class="tag">Specialist</span>
+      </div>
+      <div class="result-card">
+        <h3>HIFU Face Tightening</h3>
+        <p>The non-surgical facelift. Ultrasound reaches the deep layers that creams never touch - stimulating your own collagen for natural lifting and firming that lasts 12+ months.</p>
+        <span class="tag">First in WA</span>
+      </div>
+      <div class="result-card">
+        <h3>NeoGen Plasma</h3>
+        <p>Six international beauty awards for a reason. Total skin renewal that transforms texture, tone and firmness in ways no other single treatment can match.</p>
+        <span class="tag">6 Awards</span>
+      </div>
+      <div class="result-card">
+        <h3>Sofwave Ultrasound</h3>
+        <p>Next-generation collagen regeneration using S.U.P.E.R.B. technology. Fine lines soften, skin firms, and your natural glow comes back - all in a single session.</p>
+        <span class="tag">Latest Technology</span>
+      </div>
+      <div class="result-card">
+        <h3>MicroHydra-LIFT Facial</h3>
+        <p>Nuala's signature 45-minute transformation. Eight steps combining ultrasound, hydrabrasion and radio frequency for skin that looks lit from within.</p>
+        <span class="tag">Signature Treatment</span>
+      </div>
+      <div class="result-card">
+        <h3>TESLA Body Sculpting</h3>
+        <p>Non-invasive muscle toning and body contouring. The same electromagnetic technology used by elite athletes - now available for sculpting and definition.</p>
+        <span class="tag">Body</span>
+      </div>
+      <div class="result-card">
+        <h3>TESLA Chair</h3>
+        <p>Pelvic floor strengthening that changes lives. A treatment women whisper about to their friends - because the results are too good not to share.</p>
+        <span class="tag">Wellness</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label">What Our Clients Say</div>
+    <h2>Real Words from Real Women</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>Thank you for the fantastic treatment yesterday Nuala, you have certainly made a big difference to my skin with all the latest equipment and your endless knowledge</p>
+        <div class="attr">Verified Client</div>
+      </div>
+      <div class="testimonial-card">
+        <p>Nuala is extremely knowledgeable and experienced in her field. I've had my second HiFu treatment after great results from the first one 18 months ago.</p>
+        <div class="attr">Verified Client</div>
+      </div>
+      <div class="testimonial-card">
+        <p>Nuala is an amazing clinician. I've been seeing her for years and have only had very positive experiences with fantastic outcomes for my skincare.</p>
+        <div class="attr">Verified Client</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Ready to Feel Like Yourself Again?</h2>
+    <p>Book a complimentary consultation with Nuala. Thirty years of expertise, zero pressure - just honest advice about what will work for your skin.</p>
+    <a href="https://www.phorest.com/salon/nbskinptyltd" class="btn-primary" target="_blank">Book Your Consultation</a>
+    <div class="trust">70 Staton Road, East Fremantle &nbsp;|&nbsp; +61 484 608 877 &nbsp;|&nbsp; No obligation</div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">NBSkin</div>
+  <p>70 Staton Road, East Fremantle 6158 &nbsp;|&nbsp; +61 484 608 877 &nbsp;|&nbsp; nuala@nbskin.com.au<br>
+  Mon 12-5 &nbsp;|&nbsp; Tue-Fri 9-5 &nbsp;|&nbsp; Sat 10-2 (by request)</p>
+</footer>
+
+</body>
+</html>

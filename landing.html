@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIFU Face Tightening | NBSkin East Fremantle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Fahkwang:wght@300;400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --deep: #2C2631;
+      --accent: #C4A47C;
+      --accent-light: #D4C4A8;
+      --rose: #D4B8A8;
+      --cream: #FBF8F5;
+      --cream-dark: #F0EAE2;
+      --white: #FFFFFF;
+      --text: #2A2A2A;
+      --text-light: #666666;
+      --text-muted: #999999;
+      --border: rgba(44,38,49,0.1);
+      --cc-dark: #0A2A28;
+      --cc-teal: #00D4BC;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Mulish', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       DEMO BANNER
+    ========================================== */
+    .demo-banner {
+      background: var(--cc-dark);
+      color: var(--cc-teal);
+      text-align: center;
+      padding: 10px 20px;
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    /* ==========================================
+       STICKY NAV
+    ========================================== */
+    .nav {
+      position: fixed;
+      top: 38px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: rgba(251, 248, 245, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-wordmark {
+      font-family: 'Sacramento', cursive;
+      font-size: 28px;
+      color: var(--deep);
+      line-height: 1;
+    }
+
+    .nav-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 11px 24px;
+      border-radius: 2px;
+      transition: background 0.25s ease, transform 0.15s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--deep);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================
+       SPACER (accounts for demo banner + nav)
+    ========================================== */
+    .page-spacer {
+      height: 108px;
+    }
+
+    /* ==========================================
+       HERO
+    ========================================== */
+    .hero {
+      background: var(--cream);
+      padding: 72px 40px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Dot grid overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(196,164,124,0.18) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 6px 14px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    .hero-h1 {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.15;
+      color: var(--deep);
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text-light);
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--deep);
+      color: var(--white);
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 40px;
+      border-radius: 2px;
+      transition: background 0.25s ease, transform 0.15s ease;
+      margin-bottom: 28px;
+      display: inline-block;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hero-trust {
+      font-family: 'Mulish', sans-serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-trust span {
+      color: var(--accent);
+      margin: 0 6px;
+    }
+
+    /* Offer Card */
+    .offer-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 44px 36px;
+      box-shadow: 0 8px 48px rgba(44,38,49,0.08);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--rose));
+    }
+
+    .offer-card-label {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .offer-card h2 {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: 26px;
+      color: var(--deep);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .offer-card-from {
+      font-family: 'Mulish', sans-serif;
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .offer-card-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent-light);
+      margin: 0 auto 24px;
+    }
+
+    .offer-card-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .offer-card-features li {
+      font-family: 'Mulish', sans-serif;
+      font-size: 14px;
+      color: var(--text-light);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .offer-card-features li:last-child { border-bottom: none; }
+
+    .offer-card-features li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .offer-card-cta {
+      display: block;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 32px;
+      border-radius: 2px;
+      transition: background 0.25s ease, transform 0.15s ease;
+      margin-bottom: 16px;
+    }
+
+    .offer-card-cta:hover {
+      background: var(--deep);
+      transform: translateY(-2px);
+    }
+
+    .offer-card-note {
+      font-family: 'Mulish', sans-serif;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================
+       SECTION SHARED STYLES
+    ========================================== */
+    .section {
+      padding: 88px 40px;
+    }
+
+    .section-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .section-h2 {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: clamp(28px, 3.5vw, 42px);
+      line-height: 1.2;
+      color: var(--deep);
+      margin-bottom: 16px;
+    }
+
+    .section-h2.light {
+      color: var(--cream);
+    }
+
+    .section-intro {
+      font-family: 'Mulish', sans-serif;
+      font-size: 17px;
+      color: var(--text-light);
+      line-height: 1.75;
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+
+    /* ==========================================
+       QUOTES SECTION
+    ========================================== */
+    .quotes-section {
+      background: var(--white);
+      padding: 88px 40px;
+    }
+
+    .quotes-header {
+      max-width: 1160px;
+      margin: 0 auto 52px;
+    }
+
+    .quotes-eyebrow {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .quotes-h2 {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: clamp(26px, 3vw, 38px);
+      color: var(--deep);
+      line-height: 1.25;
+    }
+
+    .quotes-grid {
+      max-width: 1160px;
+      margin: 0 auto 52px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .quote-card {
+      background: var(--cream);
+      border-radius: 4px;
+      padding: 36px 32px;
+      border-left: 3px solid var(--rose);
+      position: relative;
+      transition: box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .quote-card:hover {
+      box-shadow: 0 8px 32px rgba(44,38,49,0.08);
+      transform: translateY(-3px);
+    }
+
+    .quote-mark {
+      font-family: 'Sacramento', cursive;
+      font-size: 72px;
+      color: var(--rose);
+      line-height: 0.6;
+      margin-bottom: 20px;
+      display: block;
+      opacity: 0.6;
+    }
+
+    .quote-text {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .quotes-closer {
+      max-width: 1160px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quotes-closer p {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--deep);
+      line-height: 1.5;
+    }
+
+    .quotes-closer p em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    /* ==========================================
+       HOW IT WORKS
+    ========================================== */
+    .steps-section {
+      background: var(--cream-dark);
+      padding: 88px 40px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    .step-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 36px 28px;
+      position: relative;
+      transition: box-shadow 0.25s ease, transform 0.2s ease;
+      border: 1px solid var(--border);
+    }
+
+    .step-card:hover {
+      box-shadow: 0 12px 40px rgba(44,38,49,0.1);
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      font-family: 'Sacramento', cursive;
+      font-size: 64px;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .step-title {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--deep);
+      margin-bottom: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .step-desc {
+      font-family: 'Mulish', sans-serif;
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .step-connector {
+      position: absolute;
+      top: 50%;
+      right: -18px;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 1px;
+      background: var(--accent-light);
+      z-index: 1;
+    }
+
+    /* ==========================================
+       RESULTS SECTION
+    ========================================== */
+    .results-section {
+      background: var(--deep);
+      padding: 88px 40px;
+    }
+
+    .results-section .section-h2 {
+      color: var(--cream);
+    }
+
+    .results-section .section-intro {
+      color: var(--accent-light);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 56px;
+    }
+
+    .result-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.25s ease, transform 0.2s ease;
+    }
+
+    .result-card:hover {
+      border-color: rgba(196,164,124,0.4);
+      transform: translateY(-4px);
+    }
+
+    .result-image-area {
+      height: 280px;
+      background: linear-gradient(135deg, rgba(196,164,124,0.08) 0%, rgba(44,38,49,0.4) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .result-labels {
+      display: flex;
+      gap: 0;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .result-label {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.6);
+      background: rgba(0,0,0,0.2);
+    }
+
+    .result-label.before {
+      border-right: none;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .result-label.after {
+      border-radius: 0 2px 2px 0;
+      background: rgba(196,164,124,0.15);
+      color: var(--accent);
+      border-color: rgba(196,164,124,0.3);
+    }
+
+    .result-divider-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(196,164,124,0.3);
+    }
+
+    .result-placeholder-text {
+      font-family: 'Mulish', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+      text-align: center;
+      padding: 0 24px;
+      line-height: 1.6;
+    }
+
+    .result-info {
+      padding: 24px 28px;
+    }
+
+    .result-area {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .result-desc {
+      font-family: 'Mulish', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    .results-note {
+      text-align: center;
+      margin-top: 44px;
+    }
+
+    .results-note p {
+      font-family: 'Mulish', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      font-style: italic;
+    }
+
+    /* ==========================================
+       MID-PAGE CTA
+    ========================================== */
+    .mid-cta-section {
+      background: var(--accent);
+      padding: 72px 40px;
+      text-align: center;
+    }
+
+    .mid-cta-section h2 {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: clamp(26px, 3vw, 38px);
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .mid-cta-section p {
+      font-family: 'Mulish', sans-serif;
+      font-size: 17px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 36px;
+      line-height: 1.65;
+    }
+
+    .mid-cta-btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--deep);
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 44px;
+      border-radius: 2px;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+    }
+
+    .mid-cta-btn:hover {
+      background: var(--deep);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================
+       TESTIMONIAL
+    ========================================== */
+    .testimonial-section {
+      background: var(--white);
+      padding: 88px 40px;
+    }
+
+    .testimonial-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .testimonial-star {
+      color: var(--accent);
+      font-size: 22px;
+      letter-spacing: 4px;
+      margin-bottom: 32px;
+      display: block;
+    }
+
+    .testimonial-quote {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 300;
+      font-size: clamp(20px, 2.5vw, 28px);
+      line-height: 1.55;
+      color: var(--deep);
+      font-style: italic;
+      margin-bottom: 36px;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .testimonial-source {
+      font-family: 'Mulish', sans-serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .testimonial-source::before,
+    .testimonial-source::after {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--accent-light);
+    }
+
+    /* ==========================================
+       FAQ
+    ========================================== */
+    .faq-section {
+      background: var(--cream);
+      padding: 88px 40px;
+    }
+
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-list {
+      margin-top: 56px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      text-align: left;
+      gap: 20px;
+    }
+
+    .faq-question-text {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      color: var(--deep);
+      line-height: 1.35;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, border-color 0.25s ease;
+      position: relative;
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .faq-icon::before {
+      width: 10px;
+      height: 1.5px;
+    }
+
+    .faq-icon::after {
+      width: 1.5px;
+      height: 10px;
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .faq-item.open .faq-icon::before,
+    .faq-item.open .faq-icon::after {
+      background: var(--white);
+    }
+
+    .faq-item.open .faq-icon::after {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+
+    .faq-answer-wrap {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer {
+      padding: 0 0 28px;
+      font-family: 'Mulish', sans-serif;
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.75;
+    }
+
+    /* ==========================================
+       FINAL CTA
+    ========================================== */
+    .final-cta-section {
+      background: var(--deep);
+      padding: 96px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(196,164,124,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .final-cta-section h2 {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: clamp(28px, 3.5vw, 44px);
+      color: var(--cream);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .final-cta-section p {
+      font-family: 'Mulish', sans-serif;
+      font-size: 17px;
+      color: var(--accent-light);
+      margin-bottom: 44px;
+      line-height: 1.65;
+    }
+
+    .final-cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .final-btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 44px;
+      border-radius: 2px;
+      transition: background 0.25s ease, transform 0.15s ease;
+    }
+
+    .final-btn-primary:hover {
+      background: var(--cream);
+      color: var(--deep);
+      transform: translateY(-2px);
+    }
+
+    .final-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-light);
+      font-family: 'Mulish', sans-serif;
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .final-btn-secondary:hover {
+      color: var(--white);
+    }
+
+    .final-trust {
+      font-family: 'Mulish', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.8;
+    }
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
+    .footer {
+      background: var(--cream-dark);
+      padding: 52px 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      font-family: 'Sacramento', cursive;
+      font-size: 36px;
+      color: var(--deep);
+      margin-bottom: 12px;
+    }
+
+    .footer-tagline {
+      font-family: 'Mulish', sans-serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .footer-col-title {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--deep);
+      margin-bottom: 16px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      font-family: 'Mulish', sans-serif;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.8;
+      text-decoration: none;
+      display: block;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      max-width: 1160px;
+      margin: 36px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-family: 'Mulish', sans-serif;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .footer-cc {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-cc-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cc-teal);
+      display: inline-block;
+    }
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+    @media (max-width: 1024px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .offer-card {
+        max-width: 480px;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .step-connector {
+        display: none;
+      }
+
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .demo-banner {
+        font-size: 9px;
+        padding: 8px 16px;
+      }
+
+      .page-spacer {
+        height: 100px;
+      }
+
+      .nav {
+        padding: 12px 20px;
+        top: 34px;
+      }
+
+      .nav-wordmark {
+        font-size: 24px;
+      }
+
+      .nav-cta {
+        font-size: 11px;
+        padding: 9px 16px;
+      }
+
+      .hero,
+      .section,
+      .quotes-section,
+      .steps-section,
+      .results-section,
+      .mid-cta-section,
+      .testimonial-section,
+      .faq-section,
+      .final-cta-section,
+      .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .hero { padding-top: 52px; padding-bottom: 60px; }
+
+      .quotes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .hero-cta,
+      .mid-cta-btn,
+      .final-btn-primary {
+        display: block;
+        text-align: center;
+        width: 100%;
+      }
+
+      .final-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .final-btn-secondary {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .nav-logo img { height: 28px; }
+      .nav-wordmark { font-size: 22px; }
+      .hero-h1 { font-size: 30px; }
+      .hero-sub { font-size: 16px; }
+      .offer-card { padding: 32px 24px; }
+      .quote-card { padding: 28px 24px; }
+      .step-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       DEMO BANNER
+  ========================================== -->
+  <div class="demo-banner">
+    CLINIC CATALYST DEMO - Campaign Landing Page Example
+  </div>
+
+  <!-- ==========================================
+       STICKY NAV
+  ========================================== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-logo">
+      <img
+        src="https://nbskin.com.au/cdn/shop/files/nbskin-logo-new_200x.png"
+        alt="NBSkin logo"
+        onerror="this.style.display='none'"
+      />
+      <span class="nav-wordmark">NBSkin</span>
+    </div>
+    <a
+      href="https://www.phorest.com/salon/nbskinptyltd"
+      class="nav-cta"
+      target="_blank"
+      rel="noopener"
+      aria-label="Book your appointment at NBSkin"
+    >
+      Book Now
+    </a>
+  </nav>
+
+  <div class="page-spacer" aria-hidden="true"></div>
+
+  <!-- ==========================================
+       HERO
+  ========================================== -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-inner">
+
+      <div class="hero-left">
+        <span class="hero-tag" aria-label="Location tag">East Fremantle's HIFU Specialists</span>
+        <h1 class="hero-h1" id="hero-heading">
+          See the Difference<br />Without the Downtime
+        </h1>
+        <p class="hero-sub">
+          Non-surgical face and neck tightening that works with your skin's natural renewal process. Walk in on your lunch break. Walk out looking refreshed.
+        </p>
+        <a
+          href="https://www.phorest.com/salon/nbskinptyltd"
+          class="hero-cta"
+          target="_blank"
+          rel="noopener"
+          aria-label="Book your HIFU consultation at NBSkin"
+        >
+          Book Your HIFU Consultation
+        </a>
+        <p class="hero-trust">
+          30+ years experience<span aria-hidden="true">|</span> First HIFU clinic in WA<span aria-hidden="true">|</span> Thousands of treatments
+        </p>
+      </div>
+
+      <div class="hero-right" aria-label="Treatment offer summary">
+        <div class="offer-card">
+          <p class="offer-card-label">Signature Treatment</p>
+          <h2>HIFU Face Tightening</h2>
+          <p class="offer-card-from">From one session</p>
+          <div class="offer-card-divider" aria-hidden="true"></div>
+          <ul class="offer-card-features" aria-label="Treatment benefits">
+            <li>Non-invasive and needle-free</li>
+            <li>Zero downtime</li>
+            <li>Results visible in 2-3 months</li>
+            <li>Lasts 12+ months</li>
+            <li>Face, neck, jawline and decolletage</li>
+          </ul>
+          <a
+            href="https://www.phorest.com/salon/nbskinptyltd"
+            class="offer-card-cta"
+            target="_blank"
+            rel="noopener"
+            aria-label="Book now at NBSkin"
+          >
+            Book Now
+          </a>
+          <p class="offer-card-note">Complimentary consultation included</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       QUOTES SECTION
+  ========================================== -->
+  <section class="quotes-section" aria-labelledby="quotes-heading">
+    <div class="quotes-header">
+      <span class="quotes-eyebrow">We hear this every week</span>
+      <h2 class="quotes-h2" id="quotes-heading">
+        From women who walked through<br />our door feeling exactly like this
+      </h2>
+    </div>
+
+    <div class="quotes-grid">
+
+      <div class="quote-card" role="article">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <p class="quote-text">
+          "I catch my reflection and don't recognise the jawline looking back at me - it feels like it changed overnight."
+        </p>
+      </div>
+
+      <div class="quote-card" role="article">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <p class="quote-text">
+          "I've tried every cream on the shelf and nothing is making a difference anymore. I need something that actually works at this stage."
+        </p>
+      </div>
+
+      <div class="quote-card" role="article">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <p class="quote-text">
+          "I don't want surgery. I just want to feel like myself again - confident, present, comfortable in my own skin."
+        </p>
+      </div>
+
+    </div>
+
+    <div class="quotes-closer">
+      <p>
+        If any of that sounds familiar - you're exactly who
+        <em>HIFU was designed for.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       HOW IT WORKS
+  ========================================== -->
+  <section class="steps-section" aria-labelledby="steps-heading">
+    <div class="section-inner">
+      <span class="section-label" aria-hidden="true">The Process</span>
+      <h2 class="section-h2" id="steps-heading">How It Works</h2>
+      <p class="section-intro">
+        From your first conversation with Nuala to glowing results - here's what the journey looks like.
+      </p>
+    </div>
+
+    <div class="section-inner">
+      <div class="steps-grid" role="list">
+
+        <div class="step-card" role="listitem" aria-label="Step 1: We Listen">
+          <span class="step-number" aria-hidden="true">01</span>
+          <h3 class="step-title">We Listen</h3>
+          <p class="step-desc">
+            Tell Nuala your concerns. She'll assess your skin and recommend whether HIFU is right for you - no pressure, just honest expert advice.
+          </p>
+          <span class="step-connector" aria-hidden="true"></span>
+        </div>
+
+        <div class="step-card" role="listitem" aria-label="Step 2: We Treat">
+          <span class="step-number" aria-hidden="true">02</span>
+          <h3 class="step-title">We Treat</h3>
+          <p class="step-desc">
+            Focused ultrasound reaches the deep layers of your skin, stimulating collagen where creams simply can't reach.
+          </p>
+          <span class="step-connector" aria-hidden="true"></span>
+        </div>
+
+        <div class="step-card" role="listitem" aria-label="Step 3: You Heal">
+          <span class="step-number" aria-hidden="true">03</span>
+          <h3 class="step-title">You Heal</h3>
+          <p class="step-desc">
+            Your body does the work. Over 2-3 months, new collagen firms and lifts naturally. No recovery time, no interruption to your life.
+          </p>
+          <span class="step-connector" aria-hidden="true"></span>
+        </div>
+
+        <div class="step-card" role="listitem" aria-label="Step 4: You Glow">
+          <span class="step-number" aria-hidden="true">04</span>
+          <h3 class="step-title">You Glow</h3>
+          <p class="step-desc">
+            Results that last 12+ months. Most clients rebook annually to maintain their results - and love what they see in the mirror.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       RESULTS SECTION
+  ========================================== -->
+  <section class="results-section" aria-labelledby="results-heading">
+    <div class="section-inner">
+      <span class="section-label" aria-hidden="true">Real Results</span>
+      <h2 class="section-h2 light" id="results-heading">
+        Real Results from Real Women
+      </h2>
+      <p class="section-intro">
+        Subtle, natural-looking changes that make you feel like the most confident version of yourself.
+      </p>
+    </div>
+
+    <div class="section-inner">
+      <div class="results-grid">
+
+        <div class="result-card" role="article" aria-label="Face Tightening result">
+          <div class="result-image-area">
+            <div class="result-labels" aria-hidden="true">
+              <span class="result-label before">Before</span>
+              <span class="result-label after">After</span>
+            </div>
+            <div class="result-divider-line" aria-hidden="true"></div>
+            <p class="result-placeholder-text" aria-label="Result photo placeholder">
+              Before and after photos<br />available during your<br />consultation
+            </p>
+          </div>
+          <div class="result-info">
+            <p class="result-area">Face Tightening</p>
+            <p class="result-desc">Restored firmness and a refreshed, lifted appearance.</p>
+          </div>
+        </div>
+
+        <div class="result-card" role="article" aria-label="Jawline Definition result">
+          <div class="result-image-area">
+            <div class="result-labels" aria-hidden="true">
+              <span class="result-label before">Before</span>
+              <span class="result-label after">After</span>
+            </div>
+            <div class="result-divider-line" aria-hidden="true"></div>
+            <p class="result-placeholder-text" aria-label="Result photo placeholder">
+              Before and after photos<br />available during your<br />consultation
+            </p>
+          </div>
+          <div class="result-info">
+            <p class="result-area">Jawline Definition</p>
+            <p class="result-desc">A cleaner, more defined profile - naturally achieved.</p>
+          </div>
+        </div>
+
+        <div class="result-card" role="article" aria-label="Neck Firming result">
+          <div class="result-image-area">
+            <div class="result-labels" aria-hidden="true">
+              <span class="result-label before">Before</span>
+              <span class="result-label after">After</span>
+            </div>
+            <div class="result-divider-line" aria-hidden="true"></div>
+            <p class="result-placeholder-text" aria-label="Result photo placeholder">
+              Before and after photos<br />available during your<br />consultation
+            </p>
+          </div>
+          <div class="result-info">
+            <p class="result-area">Neck Firming</p>
+            <p class="result-desc">Visibly firmer neck and decolletage with lasting results.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="results-note">
+        <p>Before and after photos available during your consultation with Nuala</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MID-PAGE CTA
+  ========================================== -->
+  <section class="mid-cta-section" aria-labelledby="mid-cta-heading">
+    <h2 id="mid-cta-heading">Ready to See What HIFU Can Do for You?</h2>
+    <p>Book a consultation with Nuala - no pressure, just honest expert advice tailored to your skin.</p>
+    <a
+      href="https://www.phorest.com/salon/nbskinptyltd"
+      class="mid-cta-btn"
+      target="_blank"
+      rel="noopener"
+      aria-label="Book your HIFU consultation at NBSkin"
+    >
+      Book Your Consultation
+    </a>
+  </section>
+
+  <!-- ==========================================
+       TESTIMONIAL
+  ========================================== -->
+  <section class="testimonial-section" aria-labelledby="testimonial-heading">
+    <div class="testimonial-inner">
+      <span class="testimonial-star" aria-label="Five star review" role="img">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <blockquote>
+        <p class="testimonial-quote" id="testimonial-heading">
+          "Nuala is extremely knowledgeable and experienced in her field. I've had my second HIFU treatment after great results from the first one 18 months ago."
+        </p>
+        <footer class="testimonial-source">
+          Verified NBSkin Client
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FAQ
+  ========================================== -->
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="faq-inner">
+      <span class="section-label" aria-hidden="true">Common Questions</span>
+      <h2 class="section-h2" id="faq-heading">Your Questions, Answered</h2>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button
+            class="faq-question"
+            aria-expanded="false"
+            aria-controls="faq-answer-1"
+            id="faq-btn-1"
+          >
+            <span class="faq-question-text">Does HIFU hurt?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrap" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">
+            <p class="faq-answer">
+              Most women describe it as a warm tingling sensation. Nuala adjusts the intensity to your comfort level throughout the treatment, making the experience as comfortable as possible for you.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button
+            class="faq-question"
+            aria-expanded="false"
+            aria-controls="faq-answer-2"
+            id="faq-btn-2"
+          >
+            <span class="faq-question-text">How long does a session take?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrap" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2">
+            <p class="faq-answer">
+              A full face treatment typically takes 60-90 minutes. You can return to your normal routine immediately afterwards - many clients come in during their lunch break.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button
+            class="faq-question"
+            aria-expanded="false"
+            aria-controls="faq-answer-3"
+            id="faq-btn-3"
+          >
+            <span class="faq-question-text">When will I see results?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrap" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3">
+            <p class="faq-answer">
+              You may notice subtle lifting immediately after your treatment. The real transformation happens over 2-3 months as your body produces new collagen - improving gradually and naturally.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button
+            class="faq-question"
+            aria-expanded="false"
+            aria-controls="faq-answer-4"
+            id="faq-btn-4"
+          >
+            <span class="faq-question-text">How long do results last?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrap" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4">
+            <p class="faq-answer">
+              Most clients enjoy results for 12-18 months. An annual maintenance session keeps things looking fresh and supports your skin's ongoing collagen production.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button
+            class="faq-question"
+            aria-expanded="false"
+            aria-controls="faq-answer-5"
+            id="faq-btn-5"
+          >
+            <span class="faq-question-text">Is HIFU right for me?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrap" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5">
+            <p class="faq-answer">
+              HIFU works beautifully for women experiencing mild to moderate skin laxity who want natural-looking results without surgery. During your consultation, Nuala will assess your skin and recommend the best approach for you specifically.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button
+            class="faq-question"
+            aria-expanded="false"
+            aria-controls="faq-answer-6"
+            id="faq-btn-6"
+          >
+            <span class="faq-question-text">Why choose NBSkin for HIFU?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrap" id="faq-answer-6" role="region" aria-labelledby="faq-btn-6">
+            <p class="faq-answer">
+              NBSkin was one of the first clinics in Western Australia to offer HIFU. With over 30 years of experience and thousands of treatments performed, Nuala has the depth of expertise and clinical intuition that newer clinics simply haven't had the time to develop. You're in very experienced hands.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FINAL CTA
+  ========================================== -->
+  <section class="final-cta-section" aria-labelledby="final-cta-heading">
+    <div class="final-cta-inner">
+      <h2 id="final-cta-heading">Your Skin Deserves Expert Hands</h2>
+      <p>
+        Book your complimentary HIFU consultation at NBSkin in East Fremantle. Nuala will assess your skin and guide you honestly - no pressure, just expertise.
+      </p>
+      <div class="final-cta-buttons">
+        <a
+          href="https://www.phorest.com/salon/nbskinptyltd"
+          class="final-btn-primary"
+          target="_blank"
+          rel="noopener"
+          aria-label="Book your HIFU consultation online"
+        >
+          Book Now
+        </a>
+        <a
+          href="tel:+61893391789"
+          class="final-btn-secondary"
+          aria-label="Call NBSkin"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.01 4.06 2 2 0 012 1.88h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (08) 9339 1789
+        </a>
+      </div>
+      <p class="final-trust">
+        No obligation | No pressure | Just honest advice from 30+ years of experience
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <div class="footer-col">
+        <p class="footer-brand">NBSkin</p>
+        <p class="footer-tagline">
+          East Fremantle's specialist skin clinic.<br />
+          Expert treatments, genuine care, lasting results.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">Find Us</p>
+        <p>70 Staton Road</p>
+        <p>East Fremantle WA 6158</p>
+        <a href="tel:+61893391789" aria-label="Call NBSkin">(08) 9339 1789</a>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">Clinic Hours</p>
+        <p>Monday - Friday: 9am - 5pm</p>
+        <p>Saturday: By appointment</p>
+        <p>Sunday: Closed</p>
+        <a
+          href="https://www.phorest.com/salon/nbskinptyltd"
+          target="_blank"
+          rel="noopener"
+          style="margin-top: 12px; color: var(--accent);"
+          aria-label="Book online at NBSkin"
+        >
+          Book Online
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; 2024 NBSkin Pty Ltd. All rights reserved.
+      </p>
+      <span class="footer-cc">
+        <span class="footer-cc-dot" aria-hidden="true"></span>
+        Demo page by Clinic Catalyst
+      </span>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       FAQ ACCORDION SCRIPT
+  ========================================== -->
+  <script>
+    (function () {
+      var faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(function (item) {
+        var btn = item.querySelector('.faq-question');
+        var answerWrap = item.querySelector('.faq-answer-wrap');
+        var answer = item.querySelector('.faq-answer');
+
+        btn.addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+
+          // Close all items
+          faqItems.forEach(function (other) {
+            other.classList.remove('open');
+            other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            other.querySelector('.faq-answer-wrap').style.maxHeight = '0';
+          });
+
+          // Open clicked item if it was closed
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+            answerWrap.style.maxHeight = answer.scrollHeight + 32 + 'px';
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
