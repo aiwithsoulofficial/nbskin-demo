@@ -1136,6 +1136,8 @@ h1, h2, h3 {
 ════════════════════════════════════════ -->
 <script>
 (function() {
+  window.scrollTo(0, 0);
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   var slides = document.querySelectorAll('.slide');
   var dots   = document.querySelectorAll('.nav-dot');
   var bar    = document.getElementById('progressBar');
