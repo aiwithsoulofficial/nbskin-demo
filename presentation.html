@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBSkin - Clinic Catalyst Presentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --dark:   #0A2A28;
+  --teal:   #00D4BC;
+  --gold:   #D4A854;
+  --red:    #E84040;
+  --cream:  #F4EDE0;
+  --text:   #C8E0DC;
+  --gold-foil: linear-gradient(135deg, #B8943E 0%, #E8C87A 25%, #D4A854 50%, #F0D88E 75%, #C4984A 100%);
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--dark);
+  color: var(--text);
+}
+
+/* ─── SLIDE WRAPPER ─── */
+.slide {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── DOT GRID TEXTURE ─── */
+.dot-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,212,188,0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+.slide > * { position: relative; z-index: 1; }
+
+/* ─── GOLD FOIL TEXT ─── */
+.gold-foil {
+  background: var(--gold-foil);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── SHIMMER ANIMATION ─── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.shimmer {
+  background: linear-gradient(135deg, #B8943E 0%, #E8C87A 20%, #F0D88E 40%, #D4A854 60%, #E8C87A 80%, #C4984A 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── HEADINGS ─── */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── SLIDE NAV DOTS ─── */
+.nav-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(0,212,188,0.3);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-dot:hover { background: var(--teal); transform: scale(1.4); }
+.nav-dot.active { background: var(--gold); }
+
+/* ─── PROGRESS BAR ─── */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gold-foil);
+  transition: width 0.3s ease;
+  z-index: 101;
+}
+
+/* ════════════════════════════════════════
+   SLIDE 1 - COVER
+════════════════════════════════════════ */
+#slide-1 {
+  background: var(--dark);
+}
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://nbskin.com.au/cdn/shop/files/AR_NBSKIN-161.jpg?v=1761555509');
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+}
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10,42,40,0.95) 0%,
+    rgba(10,42,40,0.85) 45%,
+    rgba(10,42,40,0.2) 100%
+  );
+  z-index: 1;
+}
+.cover-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+.cover-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 20px;
+}
+.cover-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(4rem, 10vw, 8rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  margin-bottom: 24px;
+}
+.cover-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: rgba(200,224,220,0.85);
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+.cover-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cover-footer-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.cover-footer-name {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: rgba(200,224,220,0.6);
+}
+.cover-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold-foil);
+  margin-bottom: 32px;
+}
+
+/* ════════════════════════════════════════
+   SLIDE 2 - WHAT YOU'VE BUILT
+════════════════════════════════════════ */
+#slide-2 {
+  background: var(--dark);
+  padding: 60px 24px;
+}
+.s2-inner {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 0 24px;
+}
+.s2-left { display: flex; flex-direction: column; gap: 28px; }
+.s2-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.s2-heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  line-height: 1.1;
+  color: var(--cream);
+}
+.s2-intro {
+  font-weight: 300;
+  font-size: 1rem;
+  color: rgba(200,224,220,0.7);
+  line-height: 1.7;
+  max-width: 420px;
+}
+.strength-cards { display: flex; flex-direction: column; gap: 16px; }
+.strength-card {
+  border-left: 3px solid var(--gold);
+  padding: 14px 20px;
+  background: rgba(212,168,84,0.06);
+}
+.strength-card p {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.s2-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.s2-photo {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.press-strip {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,168,84,0.15);
+  width: 100%;
+  max-width: 420px;
+}
+.press-strip img {
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.55;
+}
+.press-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(200,224,220,0.35);
+  text-align: center;
+  margin-top: 4px;
+  width: 100%;
+}
+
+/* ════════════════════════════════════════
+   SLIDE 3 - QUICK WINS
+════════════════════════════════════════ */
+#slide-3 {
+  background: #061C1A;
+  padding: 60px 24px;
+}
+.s3-inner {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 24px;
+}
+.section-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+.section-heading {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+.section-sub {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: rgba(200,224,220,0.5);
+  margin-bottom: 48px;
+  letter-spacing: 1px;
+}
+.quick-wins {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.qw-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0,212,188,0.1);
+}
+.qw-item:first-child { border-top: 1px solid rgba(0,212,188,0.1); }
+.qw-number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  background: var(--gold-foil);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-top: 2px;
+}
+.qw-text {
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+.qw-text strong {
+  font-weight: 600;
+  color: var(--cream);
+}
+.this-week-badge {
+  display: inline-block;
+  background: rgba(0,212,188,0.1);
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  margin-bottom: 24px;
+}
+
+/* ════════════════════════════════════════
+   SLIDE 4 - IMAGE BREAK (B&A)
+════════════════════════════════════════ */
+#slide-4 {
+  background: #000;
+  padding: 0;
+}
+.ba-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+.ba-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 50vh;
+}
+.ba-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.ba-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.55rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.4);
+  padding: 5px 10px;
+}
+.ba-center-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: var(--gold-foil);
+  z-index: 10;
+}
+.ba-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 40px;
+  background: linear-gradient(to top, rgba(10,42,40,0.95) 0%, transparent 100%);
+  text-align: center;
+  z-index: 20;
+}
+.ba-caption p {
+  font-weight: 300;
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  color: var(--text);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ════════════════════════════════════════
+   SLIDE 5 - MARKETING
+════════════════════════════════════════ */
+#slide-5 {
+  background: var(--dark);
+  padding: 60px 24px;
+}
+.s5-inner {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 24px;
+}
+.three-blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+.block-card {
+  background: rgba(0,212,188,0.04);
+  border-top: 3px solid var(--teal);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.block-card.gold-top { border-top-color: var(--gold); }
+.block-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.55rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(0,212,188,0.4);
+}
+.block-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.block-title.gold-text { color: var(--gold); }
+.block-title.teal-text { color: var(--teal); }
+.block-body {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: rgba(200,224,220,0.75);
+  line-height: 1.7;
+}
+
+/* ════════════════════════════════════════
+   SLIDE 6 - IMAGE BREAK (TREATMENT)
+════════════════════════════════════════ */
+#slide-6 {
+  background: #000;
+  position: relative;
+}
+.treatment-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://nbskin.com.au/cdn/shop/files/AR_NBSKIN147_600x.jpg?v=1761612882');
+  background-size: cover;
+  background-position: center top;
+}
+.treatment-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,42,40,0.1) 0%,
+    rgba(10,42,40,0.3) 50%,
+    rgba(10,42,40,0.85) 100%
+  );
+}
+.treatment-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 48px;
+  margin-top: auto;
+  padding-bottom: 80px;
+  align-self: flex-end;
+}
+.treatment-caption {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  color: var(--cream);
+  max-width: 560px;
+}
+.treatment-caption .highlight {
+  display: block;
+  background: var(--gold-foil);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ════════════════════════════════════════
+   SLIDE 7 - SYSTEMS
+════════════════════════════════════════ */
+#slide-7 {
+  background: #061C1A;
+  padding: 60px 24px;
+}
+.s7-inner {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 24px;
+}
+
+/* ════════════════════════════════════════
+   SLIDE 8 - EMPATHY / TRUST
+════════════════════════════════════════ */
+#slide-8 {
+  background: var(--dark);
+  padding: 60px 24px;
+}
+.s8-inner {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.s8-left { display: flex; flex-direction: column; gap: 24px; }
+.s8-quote {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: var(--cream);
+}
+.s8-sub {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: rgba(200,224,220,0.6);
+  line-height: 1.7;
+}
+.trust-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0,212,188,0.1);
+}
+.trust-item:first-child { border-top: 1px solid rgba(0,212,188,0.1); }
+.trust-check {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background: rgba(0,212,188,0.1);
+  border: 1px solid var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.trust-check::after {
+  content: '';
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid var(--teal);
+  border-bottom: 2px solid var(--teal);
+  transform: rotate(-45deg) translateY(-1px);
+}
+.trust-text {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.trust-text strong { font-weight: 600; color: var(--cream); }
+
+.s8-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.s8-photo {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.earn-trust-badge {
+  width: 100%;
+  max-width: 360px;
+  padding: 16px 20px;
+  border: 1px solid rgba(212,168,84,0.3);
+  background: rgba(212,168,84,0.05);
+  text-align: center;
+}
+.earn-trust-badge p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: var(--gold-foil);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ════════════════════════════════════════
+   SLIDE 9 - CTA / CLOSE
+════════════════════════════════════════ */
+#slide-9 {
+  background: var(--dark);
+}
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://nbskin.com.au/cdn/shop/files/Untitled_design_24.webp?v=1761624219');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10,42,40,0.97) 0%,
+    rgba(10,42,40,0.88) 60%,
+    rgba(10,42,40,0.6) 100%
+  );
+  z-index: 1;
+}
+.cta-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  padding: 60px 40px;
+  max-width: 700px;
+}
+.cta-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.cta-headline {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.05;
+  color: var(--cream);
+}
+.cta-sub {
+  font-weight: 300;
+  font-size: 1rem;
+  color: rgba(200,224,220,0.65);
+  max-width: 480px;
+  line-height: 1.7;
+}
+.cta-button {
+  display: inline-block;
+  background: var(--gold-foil);
+  color: #0A2A28;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 18px 48px;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: 8px;
+}
+.cta-button:hover { opacity: 0.85; transform: translateY(-2px); }
+.cta-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(212,168,84,0.3);
+}
+.cta-contact {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: rgba(200,224,220,0.5);
+  line-height: 1.8;
+}
+.cta-contact a {
+  color: var(--teal);
+  text-decoration: none;
+}
+.cta-contact a:hover { text-decoration: underline; }
+.cta-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: var(--gold-foil);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────── */
+@media (max-width: 768px) {
+  html { scroll-snap-type: none; }
+  .nav-dots { display: none; }
+
+  .cover-content { padding: 48px 24px; }
+
+  .s2-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0;
+  }
+  .s2-right { order: -1; }
+  .s2-photo { max-width: 100%; aspect-ratio: 4/3; }
+
+  .ba-layout { grid-template-columns: 1fr; }
+  .ba-panel { min-height: 40vh; }
+  .ba-center-line { display: none; }
+
+  .three-blocks { grid-template-columns: 1fr; gap: 2px; }
+
+  .s8-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0;
+  }
+  .s8-right { display: none; }
+
+  .cta-content { padding: 48px 24px; }
+}
+
+/* ────────────────────────────────────────
+   PRINT
+──────────────────────────────────────── */
+@media print {
+  html { scroll-snap-type: none; overflow: visible; }
+  body { background: #fff; color: #111; }
+  .slide {
+    min-height: 0;
+    page-break-after: always;
+    padding: 40px;
+  }
+  .cover-bg, .treatment-bg, .cta-bg { display: none; }
+  .cover-overlay, .treatment-overlay, .cta-overlay { display: none; }
+  .nav-dots, .progress-bar { display: none; }
+  .gold-foil, .shimmer {
+    -webkit-text-fill-color: #8B6914;
+    background: none;
+  }
+  .ba-panel { min-height: 200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots" id="navDots" aria-label="Slide navigation">
+  <div class="nav-dot active" data-slide="1" title="Cover" tabindex="0" role="button" aria-label="Go to slide 1"></div>
+  <div class="nav-dot" data-slide="2" title="What you've built" tabindex="0" role="button" aria-label="Go to slide 2"></div>
+  <div class="nav-dot" data-slide="3" title="Quick wins" tabindex="0" role="button" aria-label="Go to slide 3"></div>
+  <div class="nav-dot" data-slide="4" title="Results" tabindex="0" role="button" aria-label="Go to slide 4"></div>
+  <div class="nav-dot" data-slide="5" title="Marketing" tabindex="0" role="button" aria-label="Go to slide 5"></div>
+  <div class="nav-dot" data-slide="6" title="Focus" tabindex="0" role="button" aria-label="Go to slide 6"></div>
+  <div class="nav-dot" data-slide="7" title="Systems" tabindex="0" role="button" aria-label="Go to slide 7"></div>
+  <div class="nav-dot" data-slide="8" title="Trust" tabindex="0" role="button" aria-label="Go to slide 8"></div>
+  <div class="nav-dot" data-slide="9" title="Next step" tabindex="0" role="button" aria-label="Go to slide 9"></div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     SLIDE 1 - COVER
+════════════════════════════════════════ -->
+<section class="slide" id="slide-1" aria-label="Cover slide">
+  <div class="cover-bg" role="img" aria-label="Nuala Briggs portrait"></div>
+  <div class="cover-overlay"></div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">Clinic Catalyst - Confidential</div>
+    <h1 class="cover-title shimmer">NBSkin</h1>
+    <div class="cover-divider"></div>
+    <p class="cover-subtitle">What we found - and where we see the opportunity</p>
+    <div class="cover-footer">
+      <div class="cover-footer-label">Prepared by</div>
+      <div class="cover-footer-name">Clinic Catalyst - Kelly Wotherspoon + Alicia Hagen</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 2 - WHAT YOU'VE BUILT
+════════════════════════════════════════ -->
+<section class="slide dot-grid" id="slide-2" aria-label="What you've built">
+  <div class="s2-inner">
+    <div class="s2-left">
+      <div>
+        <div class="s2-eyebrow">First things first</div>
+        <h2 class="s2-heading">Look at what<br><span class="gold-foil">you've built.</span></h2>
+      </div>
+      <p class="s2-intro">Before we talk about what's next - this is what you've already created.</p>
+      <div class="strength-cards">
+        <div class="strength-card">
+          <p>30+ years of expertise. London College of Fashion. Training practitioners nationally.</p>
+        </div>
+        <div class="strength-card">
+          <p>Featured in Vogue, Harper's Bazaar, Hello Magazine, and a BBC documentary.</p>
+        </div>
+        <div class="strength-card">
+          <p>6 international beauty awards for skin renewal.</p>
+        </div>
+        <div class="strength-card">
+          <p>96% of clients recommend you. And they mean it.</p>
+        </div>
+      </div>
+    </div>
+    <div class="s2-right">
+      <img
+        src="https://nbskin.com.au/cdn/shop/files/footer-carousel3new.png?v=1759994689&width=800"
+        alt="Nuala Briggs at the Royal Society of Medicine, London"
+        class="s2-photo"
+        loading="lazy"
+      >
+      <div class="press-strip" role="list" aria-label="Press features">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-vogue.png" alt="Vogue" loading="lazy">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-hello.png" alt="Hello Magazine" loading="lazy">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-bazaar.png" alt="Harper's Bazaar" loading="lazy">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-telegraph.png" alt="The Telegraph" loading="lazy">
+        <img src="https://nbskin.com.au/cdn/shop/files/partner-times.png" alt="The Times" loading="lazy">
+      </div>
+      <div class="press-label">As featured in</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 3 - QUICK WINS
+════════════════════════════════════════ -->
+<section class="slide dot-grid" id="slide-3" aria-label="Quick wins this week">
+  <div class="s3-inner">
+    <div class="section-eyebrow">No agency needed</div>
+    <h2 class="section-heading">Things you can do<br><span class="gold-foil">this week.</span></h2>
+    <div class="this-week-badge">Free. Zero cost. Right now.</div>
+    <div class="quick-wins">
+      <div class="qw-item">
+        <div class="qw-number">01</div>
+        <p class="qw-text">Add your booking link to your Instagram bio with a <strong>"$50 skin consultation"</strong> call to action.</p>
+      </div>
+      <div class="qw-item">
+        <div class="qw-number">02</div>
+        <p class="qw-text">Move your best 5 before-and-afters from social onto your <strong>homepage hero</strong>.</p>
+      </div>
+      <div class="qw-item">
+        <div class="qw-number">03</div>
+        <p class="qw-text">Ask your next 10 happy clients to leave a <strong>Google review</strong>. You have the results - you need the volume.</p>
+      </div>
+      <div class="qw-item">
+        <div class="qw-number">04</div>
+        <p class="qw-text">Add <strong>"East Fremantle"</strong> to every page title on your website. Your suburb is your superpower.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 4 - IMAGE BREAK (B&A)
+════════════════════════════════════════ -->
+<section class="slide" id="slide-4" aria-label="Before and after results">
+  <div class="ba-layout">
+    <div class="ba-panel">
+      <img
+        src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_before.png"
+        alt="Client skin - before treatment"
+        loading="lazy"
+      >
+      <div class="ba-label">Before</div>
+    </div>
+    <div class="ba-panel">
+      <img
+        src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_after.png"
+        alt="Client skin - after treatment"
+        loading="lazy"
+      >
+      <div class="ba-label">After</div>
+    </div>
+    <div class="ba-center-line" aria-hidden="true"></div>
+    <div class="ba-caption">
+      <p>Results like these deserve to be seen by every woman searching for skin solutions in Perth.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 5 - MARKETING
+════════════════════════════════════════ -->
+<section class="slide dot-grid" id="slide-5" aria-label="Three marketing priorities">
+  <div class="s5-inner">
+    <div class="section-eyebrow">Visibility</div>
+    <h2 class="section-heading">Three things that will<br><span class="gold-foil">change your reach.</span></h2>
+    <div class="three-blocks" role="list">
+      <div class="block-card" role="listitem">
+        <div class="block-num">01</div>
+        <div class="block-title teal-text">SEO</div>
+        <p class="block-body">Right now a competitor 8km away ranks above you for searches in your own suburb. We fix that.</p>
+      </div>
+      <div class="block-card gold-top" role="listitem">
+        <div class="block-num">02</div>
+        <div class="block-title gold-text">Google + Meta Ads</div>
+        <p class="block-body">Targeted campaigns that put you in front of women searching for rosacea and anti-ageing help in Perth.</p>
+      </div>
+      <div class="block-card" role="listitem">
+        <div class="block-num">03</div>
+        <div class="block-title teal-text">Social Content</div>
+        <p class="block-body">We write the scripts, you record 15 minutes a week, we edit and post. You become Perth's skin expert online.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 6 - IMAGE BREAK (TREATMENT)
+════════════════════════════════════════ -->
+<section class="slide" id="slide-6" aria-label="You focus on the work">
+  <div class="treatment-bg" role="img" aria-label="Nuala performing a skin treatment"></div>
+  <div class="treatment-overlay"></div>
+  <div class="treatment-content">
+    <p class="treatment-caption">
+      You focus on this.
+      <span class="highlight">We handle everything else.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 7 - SYSTEMS
+════════════════════════════════════════ -->
+<section class="slide dot-grid" id="slide-7" aria-label="Three systems that free your time">
+  <div class="s7-inner">
+    <div class="section-eyebrow">Operations</div>
+    <h2 class="section-heading">Three things that<br><span class="gold-foil">free your time.</span></h2>
+    <div class="three-blocks" style="margin-top:48px;" role="list">
+      <div class="block-card" role="listitem">
+        <div class="block-num">01</div>
+        <div class="block-title teal-text">Lead Follow-Up</div>
+        <p class="block-body">A team calls your leads during business hours. Support systems catch enquiries after hours. Nothing slips through.</p>
+      </div>
+      <div class="block-card gold-top" role="listitem">
+        <div class="block-num">02</div>
+        <div class="block-title gold-text">Weekly Newsletter</div>
+        <p class="block-body">You record a quick tip. We turn it into a newsletter that goes out every week. Keeps your database warm.</p>
+      </div>
+      <div class="block-card" role="listitem">
+        <div class="block-num">03</div>
+        <div class="block-title teal-text">$50 Consultation</div>
+        <p class="block-body">Your front-end offer. Redeemable against any treatment. Builds trust and fills your diary with the right women.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 8 - EMPATHY / TRUST
+════════════════════════════════════════ -->
+<section class="slide dot-grid" id="slide-8" aria-label="Why this is different">
+  <div class="s8-inner">
+    <div class="s8-left">
+      <div>
+        <div class="section-eyebrow">Switching feels big</div>
+        <h2 class="s8-quote">We get it.<br><span class="gold-foil">Here's what makes<br>this different.</span></h2>
+      </div>
+      <p class="s8-sub">Changing agencies feels like a risk. We've made it as easy as we can.</p>
+      <div class="trust-list" role="list">
+        <div class="trust-item" role="listitem">
+          <div class="trust-check" aria-hidden="true"></div>
+          <p class="trust-text"><strong>You own everything</strong> we build. Full stop.</p>
+        </div>
+        <div class="trust-item" role="listitem">
+          <div class="trust-check" aria-hidden="true"></div>
+          <p class="trust-text"><strong>Month-to-month.</strong> No lock-in contracts.</p>
+        </div>
+        <div class="trust-item" role="listitem">
+          <div class="trust-check" aria-hidden="true"></div>
+          <p class="trust-text">We handle the <strong>transition</strong> so you don't miss a beat.</p>
+        </div>
+        <div class="trust-item" role="listitem">
+          <div class="trust-check" aria-hidden="true"></div>
+          <p class="trust-text">A <strong>human team.</strong> Not a chatbot.</p>
+        </div>
+      </div>
+    </div>
+    <div class="s8-right">
+      <img
+        src="https://nbskin.com.au/cdn/shop/files/AR_NBSKIN-151_05ec8619-6340-4897-a1a8-2c0ae2f7009c.jpg?v=1761625962"
+        alt="Nuala Briggs"
+        class="s8-photo"
+        loading="lazy"
+      >
+      <div class="earn-trust-badge">
+        <p>We earn your trust every month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 9 - NEXT STEP / CTA
+════════════════════════════════════════ -->
+<section class="slide" id="slide-9" aria-label="Next step - lock in your start date">
+  <div class="cta-bg" role="img" aria-label="Nuala with a client"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <div class="cta-eyebrow">You're ready</div>
+    <h2 class="cta-headline"><span class="shimmer">Let's lock in<br>your start date.</span></h2>
+    <p class="cta-sub">The next step is a 30-minute call. We'll map out exactly what month one looks like for NBSkin.</p>
+    <a
+      href="https://link.aiwithsoul.com.au/widget/booking/CfLJGPSlIh4BLHCyDHZ0"
+      class="cta-button"
+      target="_blank"
+      rel="noopener"
+      aria-label="Book a call with Clinic Catalyst"
+    >Book a Call</a>
+    <div class="cta-divider"></div>
+    <p class="cta-contact">
+      Questions? <a href="mailto:kelly@aiwithsoul.com.au">kelly@aiwithsoul.com.au</a>
+    </p>
+    <div class="cta-brand">Clinic Catalyst - Kelly + Alicia</div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+<script>
+(function() {
+  var slides = document.querySelectorAll('.slide');
+  var dots   = document.querySelectorAll('.nav-dot');
+  var bar    = document.getElementById('progressBar');
+  var total  = slides.length;
+
+  function getActiveSlide() {
+    var mid = window.scrollY + window.innerHeight * 0.5;
+    for (var i = 0; i < slides.length; i++) {
+      var top = slides[i].offsetTop;
+      var bot = top + slides[i].offsetHeight;
+      if (mid >= top && mid < bot) return i;
+    }
+    return 0;
+  }
+
+  function updateUI() {
+    var idx = getActiveSlide();
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === idx);
+    });
+    var progress = ((idx + 1) / total) * 100;
+    bar.style.width = progress + '%';
+  }
+
+  window.addEventListener('scroll', updateUI, { passive: true });
+  updateUI();
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      var n = parseInt(this.getAttribute('data-slide'), 10) - 1;
+      slides[n].scrollIntoView({ behavior: 'smooth' });
+    });
+    dot.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+
+  // Keyboard arrow navigation
+  document.addEventListener('keydown', function(e) {
+    var idx = getActiveSlide();
+    if (e.key === 'ArrowDown' && idx < total - 1) {
+      slides[idx + 1].scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'ArrowUp' && idx > 0) {
+      slides[idx - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+})();
+</script>
+</body>
+</html>
