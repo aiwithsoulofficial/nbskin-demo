@@ -1953,13 +1953,30 @@
           </p>
         </div>
 
+        <style>
+          .ba-card { position:relative; overflow:hidden; cursor:ew-resize; user-select:none; -webkit-user-select:none; }
+          .ba-card img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+          .ba-card .ba-img-after { clip-path:inset(0 0 0 50%); }
+          .ba-card .ba-line { position:absolute; top:0; bottom:0; left:50%; width:2px; background:linear-gradient(135deg,#C4956A,#D4A87C); transform:translateX(-50%); z-index:10; pointer-events:none; }
+          .ba-card .ba-handle { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:36px; height:36px; background:rgba(10,30,28,0.85); border:2px solid #C4956A; border-radius:50%; z-index:11; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+          .ba-card .ba-handle::before { content:''; width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent; border-right:6px solid #C4956A; margin-right:4px; }
+          .ba-card .ba-handle::after { content:''; width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent; border-left:6px solid #C4956A; }
+          .ba-card .ba-tag-before, .ba-card .ba-tag-after { position:absolute; top:10px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.5rem; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.5); background:rgba(0,0,0,0.4); padding:3px 8px; z-index:5; pointer-events:none; }
+          .ba-card .ba-tag-before { left:10px; }
+          .ba-card .ba-tag-after { right:10px; }
+        </style>
+
         <div class="results-grid">
 
-          <!-- Result 1 - Lifting & Firming B&A -->
+          <!-- Result 1 - Lifting & Firming -->
           <div class="result-card">
-            <div class="result-card-image" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
-              <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_before.png?v=1760422016" alt="Before lifting and firming treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
-              <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_after.png?v=1760422016" alt="After lifting and firming treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
+            <div class="result-card-image ba-card" style="position:relative;aspect-ratio:4/3;">
+              <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_before.png?v=1760422016" alt="Before" class="ba-img-before">
+              <img src="https://nbskin.com.au/cdn/shop/files/HIFU1_-_after.png?v=1760422016" alt="After" class="ba-img-after">
+              <span class="ba-tag-before">Before</span>
+              <span class="ba-tag-after">After</span>
+              <div class="ba-line"></div>
+              <div class="ba-handle"></div>
               <div class="result-card-badge">First in WA</div>
             </div>
             <div class="result-card-body">
@@ -1969,11 +1986,15 @@
             </div>
           </div>
 
-          <!-- Result 2 - Skin Renewal B&A -->
+          <!-- Result 2 - Skin Renewal -->
           <div class="result-card">
-            <div class="result-card-image" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
-              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_Before.png?v=1760422017" alt="Before skin renewal treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
-              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_AFTER.png?v=1760422016" alt="After skin renewal treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
+            <div class="result-card-image ba-card" style="position:relative;aspect-ratio:4/3;">
+              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_Before.png?v=1760422017" alt="Before" class="ba-img-before">
+              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN1_-_AFTER.png?v=1760422016" alt="After" class="ba-img-after">
+              <span class="ba-tag-before">Before</span>
+              <span class="ba-tag-after">After</span>
+              <div class="ba-line"></div>
+              <div class="ba-handle"></div>
               <div class="result-card-badge">6 Awards</div>
             </div>
             <div class="result-card-body">
@@ -1983,25 +2004,32 @@
             </div>
           </div>
 
-          <!-- Result 3 - Lifting B&A 2 -->
+          <!-- Result 3 - Jawline & Contour -->
           <div class="result-card">
-            <div class="result-card-image" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
-              <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_before.png?v=1760422016" alt="Before lifting treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
-              <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_after.png?v=1760422017" alt="After lifting treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
-              <div class="result-card-badge">No Downtime</div>
+            <div class="result-card-image ba-card" style="position:relative;aspect-ratio:4/3;">
+              <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_before.png?v=1760422016" alt="Before" class="ba-img-before">
+              <img src="https://nbskin.com.au/cdn/shop/files/HIFU2_-_after.png?v=1760422017" alt="After" class="ba-img-after">
+              <span class="ba-tag-before">Before</span>
+              <span class="ba-tag-after">After</span>
+              <div class="ba-line"></div>
+              <div class="ba-handle"></div>
             </div>
             <div class="result-card-body">
               <div class="result-card-title">Jawline &amp; Contour</div>
-              <p class="result-card-desc">Remarkable definition restored - zero downtime, no needles, no surgery required.</p>
+              <p class="result-card-desc">Remarkable definition restored - no needles, no surgery required.</p>
               <a href="https://www.phorest.com/salon/nbskinptyltd" class="result-card-link" target="_blank">Learn More</a>
             </div>
           </div>
 
-          <!-- Result 4 - Skin Renewal B&A 2 -->
+          <!-- Result 4 - Total Skin Renewal -->
           <div class="result-card">
-            <div class="result-card-image" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative;">
-              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN2_-_Before.png?v=1760422017" alt="Before skin renewal treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
-              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN2_-_After.png?v=1760422016" alt="After skin renewal treatment" style="width:100%;height:100%;object-fit:cover;opacity:1;" />
+            <div class="result-card-image ba-card" style="position:relative;aspect-ratio:4/3;">
+              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN2_-_Before.png?v=1760422017" alt="Before" class="ba-img-before">
+              <img src="https://nbskin.com.au/cdn/shop/files/NEOGEN2_-_After.png?v=1760422016" alt="After" class="ba-img-after">
+              <span class="ba-tag-before">Before</span>
+              <span class="ba-tag-after">After</span>
+              <div class="ba-line"></div>
+              <div class="ba-handle"></div>
               <div class="result-card-badge">First in WA</div>
             </div>
             <div class="result-card-body">
@@ -2215,6 +2243,32 @@
         nav.classList.remove('scrolled');
       }
     });
+  </script>
+
+  <script>
+  (function(){
+    var cards = document.querySelectorAll('.ba-card');
+    cards.forEach(function(card){
+      var afterImg = card.querySelector('.ba-img-after');
+      var line = card.querySelector('.ba-line');
+      var handle = card.querySelector('.ba-handle');
+      var dragging = false;
+      function setPos(x){
+        var rect = card.getBoundingClientRect();
+        var pct = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+        var p = (pct * 100) + '%';
+        afterImg.style.clipPath = 'inset(0 0 0 ' + p + ')';
+        line.style.left = p;
+        handle.style.left = p;
+      }
+      card.addEventListener('mousedown', function(e){ dragging = true; setPos(e.clientX); });
+      window.addEventListener('mousemove', function(e){ if(dragging) setPos(e.clientX); });
+      window.addEventListener('mouseup', function(){ dragging = false; });
+      card.addEventListener('touchstart', function(e){ dragging = true; setPos(e.touches[0].clientX); }, {passive:true});
+      window.addEventListener('touchmove', function(e){ if(dragging) setPos(e.touches[0].clientX); }, {passive:true});
+      window.addEventListener('touchend', function(){ dragging = false; });
+    });
+  })();
   </script>
 
 </body>
